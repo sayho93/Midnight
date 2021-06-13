@@ -3,13 +3,15 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "android": "npm start && react-native run-android",
+    "android": "react-native run-android",
     "ios": "react-native run-ios",
     "start": "react-native start",
     "test": "jest",
     "lint": "eslint ."
   },
   "dependencies": {
+    "lottie-ios": "^3.1.8",
+    "lottie-react-native": "^4.0.2",
     "react": "17.0.1",
     "react-native": "0.64.2"
   },
