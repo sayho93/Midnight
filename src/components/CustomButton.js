@@ -16,19 +16,17 @@ export default class CustomButton extends Component {
                 alignItems: 'center',
                 justifyContent: 'center',
                 backgroundColor: this.props.color,
-                height: 40,
+                height: ValueConst.dimensions.button_height,
             },
             title: {
-                fontSize: 15,
+                fontSize: ValueConst.dimensions.button_default,
                 color: this.props.textColor,
-                fontFamily: 'Jalnan',
+                fontFamily: ValueConst.font.jalnan,
             },
         });
 
         return (
-            <TouchableOpacity
-                style={styles.button}
-                onPress={this.props.onPress}>
+            <TouchableOpacity style={styles.button} onPress={this.props.onPress}>
                 <Text style={styles.title}>{this.props.title}</Text>
             </TouchableOpacity>
         );
