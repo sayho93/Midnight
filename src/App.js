@@ -6,18 +6,26 @@
  * @flow strict-local
  */
 
-import React, {Component, useState} from 'react';
+import React, {useState} from 'react';
 import type {Node} from 'react';
-import {SafeAreaView, StatusBar, StyleSheet, Image, useColorScheme, View, TextInput, Animated} from 'react-native';
+import {
+    Platform,
+    SafeAreaView,
+    StatusBar,
+    StyleSheet,
+    Image,
+    useColorScheme,
+    View,
+    TextInput,
+    Alert,
+    ToastAndroid,
+} from 'react-native';
 
+import NetUtil from './utils/NetUtil';
 import LottieView from 'lottie-react-native';
 import ValueConst from './utils/ValueConst';
-import CustomButton from './components/CustomButton';
-import NetUtil from './utils/NetUtil';
-
-import {useSpring, animated} from 'react-spring';
-
-const AnimatedView = animated(View);
+import ButtonGroup from './components/auth/ButtonGroup';
+import {InputGroup} from './components/auth/InputGroup';
 
 const App: () => Node = () => {
     const [state, setToggleState] = useState({
@@ -59,15 +67,21 @@ const App: () => Node = () => {
     }
 
     async function onJoinPress() {
-        await NetUtil.getBoard(136);
+        await NetUtil.getBoard(136).then(res => {
+            Alert.alert(res.data.content);
+        });
     }
 
     async function onLoginPress() {
-        console.log(loginInfo);
-        const user = await NetUtil.login(loginInfo.email, loginInfo.pw);
-        if (user) {
-            console.log(user);
-        }
+        await NetUtil.login(loginInfo.email, loginInfo.pw).then(res => {
+            if (res.returnCode !== 1) {
+                if (Platform.OS === 'android') {
+                    ToastAndroid.show(res.returnMessage, ToastAndroid.SHORT);
+                } else {
+                    Alert.alert(res.returnMessage);
+                }
+            }
+        });
     }
 
     return (
@@ -87,73 +101,6 @@ const App: () => Node = () => {
     );
 };
 
-const InputGroup = props => {
-    const animation = useSpring({
-        to: {opacity: 1},
-        from: {opacity: 0},
-        delay: 100,
-    });
-
-    return (
-        <AnimatedView style={animation}>
-            <View style={styles.groupLayout}>
-                <View style={styles.inputGroup}>
-                    <TextInput
-                        style={styles.input}
-                        onChangeText={text => props.emailHandler(text)}
-                        placeholder="이메일"
-                        placeholderTextColor={ValueConst.colors.thisgray}
-                    />
-                    <TextInput
-                        style={styles.input}
-                        onChangeText={text => props.pwHandler(text)}
-                        textContentType="password"
-                        placeholder="패스워드"
-                        returnKeyType="go"
-                        secureTextEntry={true}
-                        autoCorrect={false}
-                        placeholderTextColor={ValueConst.colors.thisgray}
-                    />
-                    <CustomButton
-                        title="로그인"
-                        onPress={props.onLoginPress}
-                        color={ValueConst.colors.colorPrimaryDark}
-                        textColor={ValueConst.colors.white}
-                    />
-                </View>
-            </View>
-        </AnimatedView>
-    );
-};
-
-class ButtonGroup extends Component {
-    constructor(props) {
-        super(props);
-    }
-
-    render() {
-        return (
-            <View style={styles.groupLayout}>
-                <View style={styles.btnGroup}>
-                    <CustomButton
-                        title="학교 이메일로 로그인"
-                        onPress={this.props.onLoginPress}
-                        color={ValueConst.colors.colorPrimaryDark}
-                        textColor={ValueConst.colors.white}
-                    />
-                    <CustomButton
-                        title="학교 이메일로 회원가입"
-                        onPress={this.props.onJoinPress}
-                        color={ValueConst.colors.white}
-                        textColor={ValueConst.colors.colorPrimaryDark}
-                    />
-                    <Image style={styles.bottomLogo} source={require('../assets/img/text_logo_gray_small.png')} />
-                </View>
-            </View>
-        );
-    }
-}
-
 const styles = StyleSheet.create({
     logoLayout: {
         marginTop: 100,
@@ -170,35 +117,6 @@ const styles = StyleSheet.create({
         resizeMode: 'cover',
         width: 150,
         height: 45,
-    },
-    groupLayout: {
-        margin: 20,
-        alignItems: 'center',
-    },
-    btnGroup: {
-        width: '100%',
-        padding: 20,
-        alignItems: 'center',
-    },
-    bottomLogo: {
-        marginTop: 40,
-        marginBottom: 10,
-        width: 60,
-        height: 13,
-    },
-    inputGroup: {
-        width: '100%',
-        padding: 20,
-        alignItems: 'center',
-    },
-    input: {
-        marginTop: 2,
-        marginBottom: 2,
-        height: ValueConst.dimensions.button_height,
-        backgroundColor: ValueConst.colors.white,
-        color: ValueConst.colors.colorPrimaryDark,
-        fontFamily: ValueConst.font.jalnan,
-        width: '100%',
     },
 });
 
