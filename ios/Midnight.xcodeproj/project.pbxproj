@@ -12,6 +12,10 @@
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
+		CCD3CEF8592B433CA4C3EAEB /* jalnan.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6B29C4B7C690483C976377AC /* jalnan.ttf */; };
+		3701E0B0C6F64C62BA937A6D /* nsq.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A33EFD99E9BF4989BB56E80C /* nsq.ttf */; };
+		85E0D58EF6F74ADBBCB7ECBA /* nsqb.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E65649CCC4A84E28AA6173B9 /* nsqb.ttf */; };
+		B268D8EA52CD430E93EDC7D0 /* nsqr.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A231B706D00D43EB98D0ECE8 /* nsqr.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +40,10 @@
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = Midnight/main.m; sourceTree = "<group>"; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = Midnight/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
+		6B29C4B7C690483C976377AC /* jalnan.ttf */ = {isa = PBXFileReference; name = "jalnan.ttf"; path = "../assets/font/jalnan.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		A33EFD99E9BF4989BB56E80C /* nsq.ttf */ = {isa = PBXFileReference; name = "nsq.ttf"; path = "../assets/font/nsq.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		E65649CCC4A84E28AA6173B9 /* nsqb.ttf */ = {isa = PBXFileReference; name = "nsqb.ttf"; path = "../assets/font/nsqb.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		A231B706D00D43EB98D0ECE8 /* nsqr.ttf */ = {isa = PBXFileReference; name = "nsqr.ttf"; path = "../assets/font/nsqr.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +117,7 @@
 				00E356EF1AD99517003FC87E /* MidnightTests */,
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
+				0737B2FD72A940FE8B4EDC66 /* Resources */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -123,6 +132,18 @@
 			);
 			name = Products;
 			sourceTree = "<group>";
+		};
+		0737B2FD72A940FE8B4EDC66 /* Resources */ = {
+			isa = "PBXGroup";
+			children = (
+				6B29C4B7C690483C976377AC /* jalnan.ttf */,
+				A33EFD99E9BF4989BB56E80C /* nsq.ttf */,
+				E65649CCC4A84E28AA6173B9 /* nsqb.ttf */,
+				A231B706D00D43EB98D0ECE8 /* nsqr.ttf */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+			path = "";
 		};
 /* End PBXGroup section */
 
@@ -214,6 +235,10 @@
 			files = (
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
+				CCD3CEF8592B433CA4C3EAEB /* jalnan.ttf in Resources */,
+				3701E0B0C6F64C62BA937A6D /* nsq.ttf in Resources */,
+				85E0D58EF6F74ADBBCB7ECBA /* nsqb.ttf in Resources */,
+				B268D8EA52CD430E93EDC7D0 /* nsqr.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
