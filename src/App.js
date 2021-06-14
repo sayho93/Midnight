@@ -16,7 +16,6 @@ import {
     Image,
     useColorScheme,
     View,
-    TextInput,
     Alert,
     ToastAndroid,
 } from 'react-native';
