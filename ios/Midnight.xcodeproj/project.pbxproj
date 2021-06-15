@@ -8,14 +8,17 @@
 
 /* Begin PBXBuildFile section */
 		00E356F31AD99517003FC87E /* MidnightTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* MidnightTests.m */; };
+		11D25E9F26784FE1005544AC /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D25E9E26784FE1005544AC /* File.swift */; };
 		13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
-		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
-		CCD3CEF8592B433CA4C3EAEB /* jalnan.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6B29C4B7C690483C976377AC /* jalnan.ttf */; };
 		3701E0B0C6F64C62BA937A6D /* nsq.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A33EFD99E9BF4989BB56E80C /* nsq.ttf */; };
+		47266A4C953A4B9E49FF0534 /* libPods-Midnight.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 817E927F6CC32FBF8D250482 /* libPods-Midnight.a */; };
+		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
 		85E0D58EF6F74ADBBCB7ECBA /* nsqb.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E65649CCC4A84E28AA6173B9 /* nsqb.ttf */; };
+		AC97422BA4A17FBA8525EF57 /* libPods-Midnight-MidnightTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A7742CA46B73D93BD08099F2 /* libPods-Midnight-MidnightTests.a */; };
 		B268D8EA52CD430E93EDC7D0 /* nsqr.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A231B706D00D43EB98D0ECE8 /* nsqr.ttf */; };
+		CCD3CEF8592B433CA4C3EAEB /* jalnan.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6B29C4B7C690483C976377AC /* jalnan.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,18 +35,26 @@
 		00E356EE1AD99517003FC87E /* MidnightTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MidnightTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		00E356F11AD99517003FC87E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		00E356F21AD99517003FC87E /* MidnightTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MidnightTests.m; sourceTree = "<group>"; };
+		11D25E9D26784FE0005544AC /* Midnight-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Midnight-Bridging-Header.h"; sourceTree = "<group>"; };
+		11D25E9E26784FE1005544AC /* File.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
 		13B07F961A680F5B00A75B9A /* Midnight.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Midnight.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = Midnight/AppDelegate.h; sourceTree = "<group>"; };
 		13B07FB01A68108700A75B9A /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = Midnight/AppDelegate.m; sourceTree = "<group>"; };
 		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = Midnight/Images.xcassets; sourceTree = "<group>"; };
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = Midnight/Info.plist; sourceTree = "<group>"; };
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = Midnight/main.m; sourceTree = "<group>"; };
+		15DD066E676ADB0B7518D8F4 /* Pods-Midnight.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Midnight.debug.xcconfig"; path = "Target Support Files/Pods-Midnight/Pods-Midnight.debug.xcconfig"; sourceTree = "<group>"; };
+		3D8D9378E635A90F3AE0818A /* Pods-Midnight.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Midnight.release.xcconfig"; path = "Target Support Files/Pods-Midnight/Pods-Midnight.release.xcconfig"; sourceTree = "<group>"; };
+		6B29C4B7C690483C976377AC /* jalnan.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = jalnan.ttf; path = ../assets/font/jalnan.ttf; sourceTree = "<group>"; };
+		817E927F6CC32FBF8D250482 /* libPods-Midnight.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Midnight.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = Midnight/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		8B52786FF67D8BE22D686F9D /* Pods-Midnight-MidnightTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Midnight-MidnightTests.release.xcconfig"; path = "Target Support Files/Pods-Midnight-MidnightTests/Pods-Midnight-MidnightTests.release.xcconfig"; sourceTree = "<group>"; };
+		A0836DC6BA3C8B8DCAEE400C /* Pods-Midnight-MidnightTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Midnight-MidnightTests.debug.xcconfig"; path = "Target Support Files/Pods-Midnight-MidnightTests/Pods-Midnight-MidnightTests.debug.xcconfig"; sourceTree = "<group>"; };
+		A231B706D00D43EB98D0ECE8 /* nsqr.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = nsqr.ttf; path = ../assets/font/nsqr.ttf; sourceTree = "<group>"; };
+		A33EFD99E9BF4989BB56E80C /* nsq.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = nsq.ttf; path = ../assets/font/nsq.ttf; sourceTree = "<group>"; };
+		A7742CA46B73D93BD08099F2 /* libPods-Midnight-MidnightTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Midnight-MidnightTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E65649CCC4A84E28AA6173B9 /* nsqb.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = nsqb.ttf; path = ../assets/font/nsqb.ttf; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
-		6B29C4B7C690483C976377AC /* jalnan.ttf */ = {isa = PBXFileReference; name = "jalnan.ttf"; path = "../assets/font/jalnan.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		A33EFD99E9BF4989BB56E80C /* nsq.ttf */ = {isa = PBXFileReference; name = "nsq.ttf"; path = "../assets/font/nsq.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		E65649CCC4A84E28AA6173B9 /* nsqb.ttf */ = {isa = PBXFileReference; name = "nsqb.ttf"; path = "../assets/font/nsqb.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		A231B706D00D43EB98D0ECE8 /* nsqr.ttf */ = {isa = PBXFileReference; name = "nsqr.ttf"; path = "../assets/font/nsqr.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +62,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AC97422BA4A17FBA8525EF57 /* libPods-Midnight-MidnightTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -58,6 +70,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				47266A4C953A4B9E49FF0534 /* libPods-Midnight.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -81,6 +94,28 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		0737B2FD72A940FE8B4EDC66 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				6B29C4B7C690483C976377AC /* jalnan.ttf */,
+				A33EFD99E9BF4989BB56E80C /* nsq.ttf */,
+				E65649CCC4A84E28AA6173B9 /* nsqb.ttf */,
+				A231B706D00D43EB98D0ECE8 /* nsqr.ttf */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		0F69CA1285A73F1B8AFFBC6F /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				15DD066E676ADB0B7518D8F4 /* Pods-Midnight.debug.xcconfig */,
+				3D8D9378E635A90F3AE0818A /* Pods-Midnight.release.xcconfig */,
+				A0836DC6BA3C8B8DCAEE400C /* Pods-Midnight-MidnightTests.debug.xcconfig */,
+				8B52786FF67D8BE22D686F9D /* Pods-Midnight-MidnightTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		13B07FAE1A68108700A75B9A /* Midnight */ = {
 			isa = PBXGroup;
 			children = (
@@ -90,6 +125,8 @@
 				13B07FB61A68108700A75B9A /* Info.plist */,
 				81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */,
 				13B07FB71A68108700A75B9A /* main.m */,
+				11D25E9E26784FE1005544AC /* File.swift */,
+				11D25E9D26784FE0005544AC /* Midnight-Bridging-Header.h */,
 			);
 			name = Midnight;
 			sourceTree = "<group>";
@@ -98,6 +135,8 @@
 			isa = PBXGroup;
 			children = (
 				ED297162215061F000B7C4FE /* JavaScriptCore.framework */,
+				817E927F6CC32FBF8D250482 /* libPods-Midnight.a */,
+				A7742CA46B73D93BD08099F2 /* libPods-Midnight-MidnightTests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -118,6 +157,7 @@
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
 				0737B2FD72A940FE8B4EDC66 /* Resources */,
+				0F69CA1285A73F1B8AFFBC6F /* Pods */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -133,18 +173,6 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		0737B2FD72A940FE8B4EDC66 /* Resources */ = {
-			isa = "PBXGroup";
-			children = (
-				6B29C4B7C690483C976377AC /* jalnan.ttf */,
-				A33EFD99E9BF4989BB56E80C /* nsq.ttf */,
-				E65649CCC4A84E28AA6173B9 /* nsqb.ttf */,
-				A231B706D00D43EB98D0ECE8 /* nsqr.ttf */,
-			);
-			name = Resources;
-			sourceTree = "<group>";
-			path = "";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -152,9 +180,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "MidnightTests" */;
 			buildPhases = (
+				8C344DF32E623320F08E284D /* [CP] Check Pods Manifest.lock */,
 				00E356EA1AD99517003FC87E /* Sources */,
 				00E356EB1AD99517003FC87E /* Frameworks */,
 				00E356EC1AD99517003FC87E /* Resources */,
+				774D5AB4568740610B09F59E /* [CP] Embed Pods Frameworks */,
+				8EF4259EF0CC91059D5E8EA5 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -170,11 +201,14 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "Midnight" */;
 			buildPhases = (
+				9F2C230F293E2FF935A8B3D3 /* [CP] Check Pods Manifest.lock */,
 				FD10A7F022414F080027D42C /* Start Packager */,
 				13B07F871A680F5B00A75B9A /* Sources */,
 				13B07F8C1A680F5B00A75B9A /* Frameworks */,
 				13B07F8E1A680F5B00A75B9A /* Resources */,
 				00DD1BFF1BD5951E006B06BC /* Bundle React Native code and images */,
+				911297D993F5490E9B39B266 /* [CP] Embed Pods Frameworks */,
+				50078D73CDE66C9398D2BA57 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -198,7 +232,7 @@
 						TestTargetID = 13B07F861A680F5B00A75B9A;
 					};
 					13B07F861A680F5B00A75B9A = {
-						LastSwiftMigration = 1120;
+						LastSwiftMigration = 1250;
 					};
 				};
 			};
@@ -259,6 +293,118 @@
 			shellPath = /bin/sh;
 			shellScript = "set -e\n\nexport NODE_BINARY=node\n../node_modules/react-native/scripts/react-native-xcode.sh\n";
 		};
+		50078D73CDE66C9398D2BA57 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Midnight/Pods-Midnight-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Midnight/Pods-Midnight-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Midnight/Pods-Midnight-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		774D5AB4568740610B09F59E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Midnight-MidnightTests/Pods-Midnight-MidnightTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Midnight-MidnightTests/Pods-Midnight-MidnightTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Midnight-MidnightTests/Pods-Midnight-MidnightTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8C344DF32E623320F08E284D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Midnight-MidnightTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8EF4259EF0CC91059D5E8EA5 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Midnight-MidnightTests/Pods-Midnight-MidnightTests-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Midnight-MidnightTests/Pods-Midnight-MidnightTests-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Midnight-MidnightTests/Pods-Midnight-MidnightTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		911297D993F5490E9B39B266 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Midnight/Pods-Midnight-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Midnight/Pods-Midnight-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Midnight/Pods-Midnight-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9F2C230F293E2FF935A8B3D3 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Midnight-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
 		FD10A7F022414F080027D42C /* Start Packager */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -294,6 +440,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */,
+				11D25E9F26784FE1005544AC /* File.swift in Sources */,
 				13B07FC11A68108700A75B9A /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -311,7 +458,9 @@
 /* Begin XCBuildConfiguration section */
 		00E356F61AD99517003FC87E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A0836DC6BA3C8B8DCAEE400C /* Pods-Midnight-MidnightTests.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -337,7 +486,9 @@
 		};
 		00E356F71AD99517003FC87E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8B52786FF67D8BE22D686F9D /* Pods-Midnight-MidnightTests.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COPY_PHASE_STRIP = NO;
 				INFOPLIST_FILE = MidnightTests/Info.plist;
@@ -360,12 +511,15 @@
 		};
 		13B07F941A680F5B00A75B9A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 15DD066E676ADB0B7518D8F4 /* Pods-Midnight.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 8MZJHE88FH;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = Midnight/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -377,6 +531,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = Midnight;
+				SWIFT_OBJC_BRIDGING_HEADER = "Midnight-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -385,11 +540,14 @@
 		};
 		13B07F951A680F5B00A75B9A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3D8D9378E635A90F3AE0818A /* Pods-Midnight.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 8MZJHE88FH;
 				INFOPLIST_FILE = Midnight/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -401,6 +559,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = Midnight;
+				SWIFT_OBJC_BRIDGING_HEADER = "Midnight-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
@@ -439,6 +598,7 @@
 				COPY_PHASE_STRIP = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = "arm64 ";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -503,6 +663,7 @@
 				COPY_PHASE_STRIP = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = "arm64 ";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
