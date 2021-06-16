@@ -45,7 +45,6 @@ function HomeScreen({navigation}) {
                 // Alert.alert('test')
                 console.log('clicked')
                 navigation.navigate('DetailsScreen')
-                navigation.push('DetailsScreen')
             }}
             style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
             <Text>Go To Detail Screen</Text>
