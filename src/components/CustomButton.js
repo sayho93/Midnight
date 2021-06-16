@@ -1,10 +1,10 @@
-import React, {Component} from 'react';
-import {TouchableOpacity, Text, StyleSheet} from 'react-native';
-import ValueConst from '../utils/ValueConst';
+import React, {Component} from 'react'
+import {TouchableOpacity, Text, StyleSheet} from 'react-native'
+import ValueConst from '../utils/ValueConst'
 
 export default class CustomButton extends Component {
     constructor(props) {
-        super(props);
+        super(props)
     }
 
     render() {
@@ -23,12 +23,12 @@ export default class CustomButton extends Component {
                 color: this.props.textColor,
                 fontFamily: ValueConst.font.jalnan,
             },
-        });
+        })
 
         return (
             <TouchableOpacity style={styles.button} onPress={this.props.onPress}>
                 <Text style={styles.title}>{this.props.title}</Text>
             </TouchableOpacity>
-        );
+        )
     }
 }

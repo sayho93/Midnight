@@ -1,11 +1,11 @@
-import React, {Component} from 'react';
-import {Image, StyleSheet, View} from 'react-native';
-import CustomButton from '../CustomButton';
-import ValueConst from '../../utils/ValueConst';
+import React, {Component} from 'react'
+import {Image, StyleSheet, View} from 'react-native'
+import CustomButton from '../CustomButton'
+import ValueConst from '../../utils/ValueConst'
 
 export default class ButtonGroup extends Component {
     constructor(props) {
-        super(props);
+        super(props)
     }
 
     render() {
@@ -27,7 +27,7 @@ export default class ButtonGroup extends Component {
                     <Image style={styles.bottomLogo} source={require('../../../assets/img/text_logo_gray_small.png')} />
                 </View>
             </View>
-        );
+        )
     }
 }
 
@@ -47,4 +47,4 @@ const styles = StyleSheet.create({
         width: 60,
         height: 13,
     },
-});
+})
