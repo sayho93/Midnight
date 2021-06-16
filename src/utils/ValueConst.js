@@ -91,6 +91,6 @@ const ValueConst = {
         nanumSquareBold: 'nsqb',
         nunumSqueareRegular: 'nsqr',
     },
-};
+}
 
-export default ValueConst;
+export default ValueConst
