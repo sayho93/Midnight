@@ -2,7 +2,7 @@ module.exports = {
     root: true,
     extends: ['@react-native-community'],
     rules: {
-        indent: ['error', 4],
+        // indent: ['error', 4],
         curly: ['error', 'multi-or-nest'],
         'no-spaced-func': 'error',
         // 'keyword-spacing': [
