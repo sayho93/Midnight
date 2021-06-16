@@ -20,5 +20,7 @@ module.exports = {
         'space-before-function-paren': ['error', {anonymous: 'never', named: 'never', asyncArrow: 'always'}],
         quotes: ['error', 'single', {allowTemplateLiterals: true}],
         semi: ['error', 'never'],
+        'react-native/no-inline-styles': 0,
+        'react-native/no-unused-styles': 2,
     },
 }

@@ -9,7 +9,6 @@ import 'react-native-gesture-handler'
 
 import React, {useState} from 'react'
 import type {Node} from 'react'
-import {NavigationContainer} from '@react-navigation/native'
 import {
     Platform,
     SafeAreaView,
@@ -21,6 +20,9 @@ import {
     Alert,
     ToastAndroid,
     KeyboardAvoidingView,
+    TouchableOpacity,
+    Text,
+    TextInput,
 } from 'react-native'
 
 import NetUtil from '../utils/NetUtil'
@@ -29,12 +31,53 @@ import ValueConst from '../utils/ValueConst'
 import ButtonGroup from './auth/ButtonGroup'
 import {InputGroup} from './auth/InputGroup'
 import PropTypes from 'prop-types'
-import {createStackNavigator} from '@react-navigation/stack'
+import {enableScreens} from 'react-native-screens'
+import {createNativeStackNavigator} from 'react-native-screens/native-stack'
 import {CustomStatusBar} from './CustomStatusBar'
 
-const Stack = createStackNavigator()
+enableScreens()
+const Stack = createNativeStackNavigator()
 
-const App: () => Node = () => {
+function HomeScreen({navigation}) {
+    return (
+        <TouchableOpacity
+            onPress={() => {
+                // Alert.alert('test')
+                console.log('clicked')
+                navigation.navigate('DetailsScreen')
+                navigation.push('DetailsScreen')
+            }}
+            style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
+            <Text>Go To Detail Screen</Text>
+        </TouchableOpacity>
+    )
+}
+
+function DetailsScreen() {
+    return (
+        <View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
+            <Text>Detail Screen</Text>
+        </View>
+    )
+}
+
+const Detail = ({route, navigation}) => {
+    const {count} = route.params
+    return (
+        <>
+            <TouchableOpacity onPress={() => navigation.popToTop('Home')} style={{backgroundColor: 'yellow', flex: 1}}>
+                <Text>Back</Text>
+            </TouchableOpacity>
+            <TouchableOpacity
+                onPress={() => navigation.push('Detail', {count: count + 1})}
+                style={{backgroundColor: 'blue', flex: 1}}>
+                <Text>Detail {count}</Text>
+            </TouchableOpacity>
+        </>
+    )
+}
+
+const App = () => {
     const [state, setToggleState] = useState({
         toggle: false,
     })
@@ -90,42 +133,48 @@ const App: () => Node = () => {
     }
 
     return (
-        <NavigationContainer>
-            <Stack.Navigator
-                screenOptions={{
-                    headerStyle: {
-                        backgroundColor: '#f4511e',
-                    },
-                    headerTintColor: '#fff',
-                    headerTitleStyle: {
-                        fontWeight: 'bold',
-                    },
-                }}>
-                <Stack.Screen
-                    name="SignIn"
-                    component={CustomStatusBar}
-                    options={{
-                        headerShown: false,
-                    }}
-                />
-                <Stack.Screen name="SignUp" component={ButtonGroup} options={{headerBackTitleVisible: false}} />
-            </Stack.Navigator>
-            <SafeAreaView style={backgroundStyle}>
-                <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
-                <KeyboardAvoidingView behavior={Platform.OS === 'ios' ? 'position' : 'height'}>
-                    <View style={styles.logoLayout}>
-                        <LottieView
-                            source={require('../../assets/animations/love-explosion.json')}
-                            style={styles.lottie}
-                            autoPlay
-                            loop
-                        />
-                        <Image style={styles.logo} source={require('../../assets/img/title_logo_small.png')} />
-                    </View>
-                    {group}
-                </KeyboardAvoidingView>
-            </SafeAreaView>
-        </NavigationContainer>
+        <Stack.Navigator>
+            <Stack.Screen name="Home" component={HomeScreen} initialParams={{itemId: 42}} />
+            <Stack.Screen name="Detail" component={Detail} />
+            <Stack.Screen name="DetailsScreen" component={DetailsScreen} />
+        </Stack.Navigator>
+
+        // <NavigationContainer>
+        //     <Stack.Navigator
+        //         screenOptions={{
+        //             headerStyle: {
+        //                 backgroundColor: '#f4511e',
+        //             },
+        //             headerTintColor: '#fff',
+        //             headerTitleStyle: {
+        //                 fontWeight: 'bold',
+        //             },
+        //         }}>
+        //         <Stack.Screen
+        //             name="SignIn"
+        //             component={CustomStatusBar}
+        //             options={{
+        //                 headerShown: false,
+        //             }}
+        //         />
+        //         <Stack.Screen name="SignUp" component={ButtonGroup} options={{headerBackTitleVisible: false}} />
+        //     </Stack.Navigator>
+        //     <SafeAreaView style={backgroundStyle}>
+        //         <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
+        //         <KeyboardAvoidingView behavior={Platform.OS === 'ios' ? 'position' : 'height'}>
+        //             <View style={styles.logoLayout}>
+        //                 <LottieView
+        //                     source={require('../../assets/animations/love-explosion.json')}
+        //                     style={styles.lottie}
+        //                     autoPlay
+        //                     loop
+        //                 />
+        //                 <Image style={styles.logo} source={require('../../assets/img/title_logo_small.png')} />
+        //             </View>
+        //             {group}
+        //         </KeyboardAvoidingView>
+        //     </SafeAreaView>
+        // </NavigationContainer>
     )
 }
 
