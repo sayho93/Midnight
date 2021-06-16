@@ -26,6 +26,7 @@ import LottieView from 'lottie-react-native'
 import ValueConst from './utils/ValueConst'
 import ButtonGroup from './components/auth/ButtonGroup'
 import {InputGroup} from './components/auth/InputGroup'
+import {CustomStatusBar} from './components/CustomStatusBar'
 
 const App: () => Node = () => {
     const [state, setToggleState] = useState({
@@ -100,7 +101,7 @@ const App: () => Node = () => {
         </SafeAreaView>
     )
 }
-
+const APPBAR_HEIGHT = Platform.OS === 'ios' ? 44 : 56
 const styles = StyleSheet.create({
     logoLayout: {
         marginTop: 100,

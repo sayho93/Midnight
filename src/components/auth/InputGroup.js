@@ -1,17 +1,17 @@
-import React from 'react';
-import {animated, useSpring} from 'react-spring';
-import {StyleSheet, TextInput, View} from 'react-native';
-import ValueConst from '../../utils/ValueConst';
-import CustomButton from '../CustomButton';
+import React from 'react'
+import {animated, useSpring} from 'react-spring'
+import {StyleSheet, TextInput, View} from 'react-native'
+import ValueConst from '../../utils/ValueConst'
+import CustomButton from '../CustomButton'
 
-const AnimatedView = animated(View);
+const AnimatedView = animated(View)
 
 export const InputGroup = props => {
     const animation = useSpring({
         to: {opacity: 1},
         from: {opacity: 0},
         delay: 100,
-    });
+    })
 
     return (
         <AnimatedView style={animation}>
@@ -42,8 +42,8 @@ export const InputGroup = props => {
                 </View>
             </View>
         </AnimatedView>
-    );
-};
+    )
+}
 
 const styles = StyleSheet.create({
     groupLayout: {
@@ -70,4 +70,4 @@ const styles = StyleSheet.create({
         fontFamily: ValueConst.font.jalnan,
         width: '100%',
     },
-});
+})
