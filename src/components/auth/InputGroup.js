@@ -1,6 +1,6 @@
 import React from 'react';
 import {animated, useSpring} from 'react-spring';
-import {KeyboardAvoidingView, Platform, StyleSheet, TextInput, View} from 'react-native';
+import {StyleSheet, TextInput, View} from 'react-native';
 import ValueConst from '../../utils/ValueConst';
 import CustomButton from '../CustomButton';
 
@@ -14,36 +14,34 @@ export const InputGroup = props => {
     });
 
     return (
-        <KeyboardAvoidingView behavior={Platform.OS === 'ios' ? 'padding' : 'height'}>
-            <AnimatedView style={animation}>
-                <View style={styles.groupLayout}>
-                    <View style={styles.inputGroup}>
-                        <TextInput
-                            style={styles.input}
-                            onChangeText={text => props.emailHandler(text)}
-                            placeholder="이메일"
-                            placeholderTextColor={ValueConst.colors.thisgray}
-                        />
-                        <TextInput
-                            style={styles.input}
-                            onChangeText={text => props.pwHandler(text)}
-                            textContentType="password"
-                            placeholder="패스워드"
-                            returnKeyType="go"
-                            secureTextEntry={true}
-                            autoCorrect={false}
-                            placeholderTextColor={ValueConst.colors.thisgray}
-                        />
-                        <CustomButton
-                            title="로그인"
-                            onPress={props.onLoginPress}
-                            color={ValueConst.colors.colorPrimaryDark}
-                            textColor={ValueConst.colors.white}
-                        />
-                    </View>
+        <AnimatedView style={animation}>
+            <View style={styles.groupLayout}>
+                <View style={styles.inputGroup}>
+                    <TextInput
+                        style={styles.input}
+                        onChangeText={text => props.emailHandler(text)}
+                        placeholder="이메일"
+                        placeholderTextColor={ValueConst.colors.thisgray}
+                    />
+                    <TextInput
+                        style={styles.input}
+                        onChangeText={text => props.pwHandler(text)}
+                        textContentType="password"
+                        placeholder="패스워드"
+                        returnKeyType="go"
+                        secureTextEntry={true}
+                        autoCorrect={false}
+                        placeholderTextColor={ValueConst.colors.thisgray}
+                    />
+                    <CustomButton
+                        title="로그인"
+                        onPress={props.onLoginPress}
+                        color={ValueConst.colors.colorPrimaryDark}
+                        textColor={ValueConst.colors.white}
+                    />
                 </View>
-            </AnimatedView>
-        </KeyboardAvoidingView>
+            </View>
+        </AnimatedView>
     );
 };
 

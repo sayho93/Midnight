@@ -18,6 +18,8 @@ import {
     View,
     Alert,
     ToastAndroid,
+    KeyboardAvoidingView,
+    ScrollView,
 } from 'react-native';
 
 import NetUtil from './utils/NetUtil';
@@ -86,16 +88,21 @@ const App: () => Node = () => {
     return (
         <SafeAreaView style={backgroundStyle}>
             <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
-            <View style={styles.logoLayout}>
-                <LottieView
-                    source={require('../assets/animations/love-explosion.json')}
-                    style={styles.lottie}
-                    autoPlay
-                    loop
-                />
-                <Image style={styles.logo} source={require('../assets/img/title_logo_small.png')} />
-            </View>
-            {group}
+            <KeyboardAvoidingView behavior={Platform.OS === 'ios' ? 'position' : 'height'}>
+                <View style={styles.logoLayout}>
+                    <LottieView
+                        source={require('../assets/animations/love-explosion.json')}
+                        style={styles.lottie}
+                        autoPlay
+                        loop
+                    />
+                    <Image style={styles.logo} source={require('../assets/img/title_logo_small.png')} />
+                </View>
+                {group}
+                {/*<ScrollView style={backgroundStyle}>*/}
+                {/*    */}
+                {/*</ScrollView>*/}
+            </KeyboardAvoidingView>
         </SafeAreaView>
     );
 };
