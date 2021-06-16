@@ -1,6 +1,6 @@
 module.exports = {
     root: true,
-    extends: ['@react-native-community', 'prettier'],
+    extends: ['@react-native-community'],
     rules: {
         indent: ['error', 4],
         curly: ['error', 'multi-or-nest'],
@@ -19,5 +19,6 @@ module.exports = {
         // 'space-before-blocks': ['error', 'never'],
         'space-before-function-paren': ['error', {anonymous: 'never', named: 'never', asyncArrow: 'always'}],
         quotes: ['error', 'single', {allowTemplateLiterals: true}],
+        semi: ['error', 'never'],
     },
 }
