@@ -17,3 +17,16 @@ export const decrement = index => ({
     type: types.DECREMENT,
     index,
 })
+
+/*
+ * User related Actions
+ */
+export const setUser = info => ({
+    type: types.setUser,
+    info,
+})
+
+export const setUserChar = list => ({
+    type: types.setUserChar,
+    list,
+})
