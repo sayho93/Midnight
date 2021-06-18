@@ -1,7 +1,7 @@
 import React from 'react'
 import {animated, useSpring} from 'react-spring'
 import {StyleSheet, TextInput, View} from 'react-native'
-import ValueConst from '../../utils/ValueConst'
+import ValueConst from '../../constant/ValueConst'
 import CustomButton from '../CustomButton'
 
 const AnimatedView = animated(View)

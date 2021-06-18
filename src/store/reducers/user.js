@@ -1,5 +1,6 @@
 import {createReducer} from '@reduxjs/toolkit'
-import * as types from '../actions/index'
+import * as types from '../Actions'
+
 const initialState = {
     user: {
         id: 0,
@@ -32,7 +33,9 @@ const initialState = {
 }
 
 const user = createReducer(initialState.user, {
-    [types.setUser]: (state, action) => state + action.payload,
+    [types.setUser]: (state, action) => {
+        state.push(action.payload)
+    },
     [types.setUserChar]: (state, action) => state - action.payload,
 })
 

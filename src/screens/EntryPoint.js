@@ -21,12 +21,12 @@ import {
     KeyboardAvoidingView,
 } from 'react-native'
 
-import NetUtil from '../utils/NetUtil'
+import NetUtil from '../api/NetUtil'
 import LottieView from 'lottie-react-native'
-import ValueConst from '../utils/ValueConst'
+import ValueConst from '../constant/ValueConst'
+// import ValueConst from '../constant/ValueConst'
 import ButtonGroup from '../components/auth/ButtonGroup'
 import {InputGroup} from '../components/auth/InputGroup'
-import PropTypes from 'prop-types'
 
 const EntryPoint = ({route, navigation}) => {
     const [state, setToggleState] = useState({

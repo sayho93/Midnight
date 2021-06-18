@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
 import {TouchableOpacity, Text, StyleSheet} from 'react-native'
-import ValueConst from '../utils/ValueConst'
+import ValueConst from '../constant/ValueConst'
 
 export default class CustomButton extends Component {
     constructor(props) {
