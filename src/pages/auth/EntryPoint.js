@@ -26,6 +26,10 @@ import ValueConst from '../../constant/ValueConst'
 import ButtonGroup from '../../components/auth/ButtonGroup'
 import {InputGroup} from '../../components/auth/InputGroup'
 
+import {useDispatch, useSelector} from 'react-redux'
+import UserSlice from '../../store/slices/UserSlice'
+import Store from '../../store/Store'
+
 const EntryPoint = ({route, navigation}) => {
     const [state, setToggleState] = useState({
         toggle: false,
@@ -36,13 +40,9 @@ const EntryPoint = ({route, navigation}) => {
         pw: '',
     })
 
-    const isDarkMode = useColorScheme() === 'dark'
+    const dispatch = useDispatch()
 
-    const backgroundStyle = {
-        // backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
-        backgroundColor: ValueConst.colors.themeColor,
-        height: '100%',
-    }
+    const isDarkMode = useColorScheme() === 'dark'
 
     const toggleHandler = () => {
         setToggleState({
@@ -58,29 +58,45 @@ const EntryPoint = ({route, navigation}) => {
         setLoginInfo({email: loginInfo.email, pw: text})
     }
 
-    let group = null
-    if (state.toggle)
-        group = <InputGroup onLoginPress={onLoginPress} emailHandler={emailHandler} pwHandler={pwHandler} />
-    else group = <ButtonGroup onLoginPress={toggleHandler} onJoinPress={onJoinPress} />
-
-    function onJoinPress() {
+    const onJoinPress = () => {
         navigation.navigate('DetailsScreen')
     }
 
-    async function onLoginPress() {
+    const onLoginPress = async () => {
         await NetUtil.login(loginInfo.email, loginInfo.pw).then(res => {
             if (res.returnCode !== 1) {
                 if (Platform.OS === 'android') ToastAndroid.show(res.returnMessage, ToastAndroid.SHORT)
                 else Alert.alert(res.returnMessage)
             } else {
+                //-------TEST
+                dispatch(UserSlice.actions.setUser(res.data))
+                console.log(Store.getState())
+                //-------TEST
                 if (Platform.OS === 'android') ToastAndroid.show(res.returnMessage, ToastAndroid.SHORT)
                 else Alert.alert(res.returnMessage)
             }
         })
     }
 
+    const onCancelPress = () => {
+        console.log(Store.getState())
+        toggleHandler()
+    }
+
+    let group
+    if (state.toggle) {
+        group = (
+            <InputGroup
+                onLoginPress={onLoginPress}
+                onCancelPress={onCancelPress}
+                emailHandler={emailHandler}
+                pwHandler={pwHandler}
+            />
+        )
+    } else group = <ButtonGroup onLoginPress={toggleHandler} onJoinPress={onJoinPress} />
+
     return (
-        <SafeAreaView style={backgroundStyle}>
+        <SafeAreaView style={styles.backgroundStyle}>
             <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
             <KeyboardAvoidingView behavior={Platform.OS === 'ios' ? 'position' : 'height'}>
                 <View style={styles.logoLayout}>
@@ -99,6 +115,10 @@ const EntryPoint = ({route, navigation}) => {
 }
 
 const styles = StyleSheet.create({
+    backgroundStyle: {
+        backgroundColor: ValueConst.colors.themeColor,
+        height: '100%',
+    },
     logoLayout: {
         marginTop: 100,
         marginBottom: 50,

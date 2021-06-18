@@ -39,6 +39,12 @@ export const InputGroup = props => {
                         color={ValueConst.colors.colorPrimaryDark}
                         textColor={ValueConst.colors.white}
                     />
+                    <CustomButton
+                        title="취소"
+                        onPress={props.onCancelPress}
+                        color={ValueConst.colors.white}
+                        textColor={ValueConst.colors.colorPrimaryDark}
+                    />
                 </View>
             </View>
         </AnimatedView>

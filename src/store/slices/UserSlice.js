@@ -30,7 +30,7 @@ const UserSlice = createSlice({
     reducers: {
         setUser: {
             reducer: (state, action) => {
-                state.user.apply(action.payload)
+                state.user = action.payload
             },
         },
         setUserChar: {

@@ -12,11 +12,13 @@ import {View, TouchableOpacity, Text} from 'react-native'
 import {enableScreens} from 'react-native-screens'
 import {createNativeStackNavigator} from 'react-native-screens/native-stack'
 import EntryPoint from './EntryPoint'
+import Store from '../../store/Store'
 
 enableScreens()
 const Stack = createNativeStackNavigator()
 
 function DetailsScreen({navigation}) {
+    console.log(Store.getState())
     return (
         <View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
             <TouchableOpacity onPress={() => navigation.navigate('Detail', {count: 1})}>
@@ -28,6 +30,7 @@ function DetailsScreen({navigation}) {
 
 const Detail = ({route, navigation}) => {
     const {count} = route.params
+    console.log(Store.getState())
     return (
         <>
             <TouchableOpacity onPress={() => navigation.popToTop('Home')} style={{backgroundColor: 'yellow', flex: 1}}>
@@ -43,6 +46,7 @@ const Detail = ({route, navigation}) => {
 }
 
 const AuthNavigator = () => {
+    console.log(Store.getState())
     return (
         <Stack.Navigator>
             <Stack.Screen
