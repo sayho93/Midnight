@@ -7,16 +7,19 @@ import * as reducers from './reducers'
 import {Provider} from 'react-redux'
 import {NavigationContainer} from '@react-navigation/native'
 
-const counterStore = createStore(reducers.counter)
 const userStore = createStore(reducers.user)
 
 const App = () => {
     return (
-        <Provider store={{counterStore, userStore}}>
-            <NavigationContainer>
-                <UserContainer />
-            </NavigationContainer>
-        </Provider>
+        <NavigationContainer>
+            <UserContainer />
+        </NavigationContainer>
+
+        // <Provider store={{userStore}}>
+        //     <NavigationContainer>
+        //         <UserContainer />
+        //     </NavigationContainer>
+        // </Provider>
     )
 }
 

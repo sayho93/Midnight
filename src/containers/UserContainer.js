@@ -1,18 +1,11 @@
-import * as actions from '../actions'
+import * as actions from '../actions/ActionTypes'
 import {connect} from 'react-redux'
 import App from '../components/App'
 
-const mapStateToProps = state => ({
-    counter: state.counter,
-})
+import React from 'react'
 
-const mapDispatchToProps = dispatch => ({
-    handleIncrement: index => dispatch(actions.increment(index)),
-    handleDecrement: index => dispatch(actions.decrement(index)),
-    handleAddCounter: () => dispatch(actions.add()),
-    handleRemoveCounter: () => dispatch(actions.remove()),
-})
-
-const UserContainer = connect(mapStateToProps, mapDispatchToProps)(App)
+const UserContainer = () => {
+    return <App />
+}
 
 export default UserContainer
