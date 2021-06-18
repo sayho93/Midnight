@@ -1,12 +1,11 @@
 /**
- * Sample React Native App
+ * Sample React Native AuthNavigator
  * https://github.com/facebook/react-native
  *
  * @format
  * @flow strict-local
  */
 import 'react-native-gesture-handler'
-
 import React, {useState} from 'react'
 import {
     Platform,
@@ -21,12 +20,11 @@ import {
     KeyboardAvoidingView,
 } from 'react-native'
 
-import NetUtil from '../api/NetUtil'
+import NetUtil from '../../api/NetUtil'
 import LottieView from 'lottie-react-native'
-import ValueConst from '../constant/ValueConst'
-// import ValueConst from '../constant/ValueConst'
-import ButtonGroup from '../components/auth/ButtonGroup'
-import {InputGroup} from '../components/auth/InputGroup'
+import ValueConst from '../../constant/ValueConst'
+import ButtonGroup from '../../components/auth/ButtonGroup'
+import {InputGroup} from '../../components/auth/InputGroup'
 
 const EntryPoint = ({route, navigation}) => {
     const [state, setToggleState] = useState({
@@ -87,12 +85,12 @@ const EntryPoint = ({route, navigation}) => {
             <KeyboardAvoidingView behavior={Platform.OS === 'ios' ? 'position' : 'height'}>
                 <View style={styles.logoLayout}>
                     <LottieView
-                        source={require('../../assets/animations/love-explosion.json')}
+                        source={require('../../../assets/animations/love-explosion.json')}
                         style={styles.lottie}
                         autoPlay
                         loop
                     />
-                    <Image style={styles.logo} source={require('../../assets/img/title_logo_small.png')} />
+                    <Image style={styles.logo} source={require('../../../assets/img/title_logo_small.png')} />
                 </View>
                 {group}
             </KeyboardAvoidingView>

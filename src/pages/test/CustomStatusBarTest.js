@@ -1,5 +1,5 @@
 /**
- * Sample React Native App
+ * Sample React Native AuthNavigator
  * https://github.com/facebook/react-native
  *
  * @format
@@ -8,7 +8,7 @@
 
 import React from 'react'
 import {Platform, StyleSheet, View} from 'react-native'
-import {CustomStatusBar} from '../components/CustomStatusBar'
+import {CustomStatusBar} from '../../components/CustomStatusBar'
 
 const CustomStatusBarTest = props => {
     return (

@@ -1,25 +1,16 @@
 import React from 'react'
-import UserContainer from './store/containers/UserContainer'
-
-import {createStore} from 'redux'
-import user from './store/reducers/user'
-// import reducers from './reducers'
+import AuthNavigator from './pages/auth/AuthNavigator'
 import {Provider} from 'react-redux'
 import {NavigationContainer} from '@react-navigation/native'
-
-const userStore = createStore(user)
+import Store from './store/Store'
 
 const App = () => {
     return (
-        <NavigationContainer>
-            <UserContainer />
-        </NavigationContainer>
-
-        // <Provider store={{userStore}}>
-        //     <NavigationContainer>
-        //         <UserContainer />
-        //     </NavigationContainer>
-        // </Provider>
+        <Provider store={Store}>
+            <NavigationContainer>
+                <AuthNavigator />
+            </NavigationContainer>
+        </Provider>
     )
 }
 

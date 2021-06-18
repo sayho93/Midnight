@@ -1,5 +1,5 @@
 /**
- * Sample React Native App
+ * Sample React Native AuthNavigator
  * https://github.com/facebook/react-native
  *
  * @format
@@ -9,10 +9,9 @@ import 'react-native-gesture-handler'
 
 import React from 'react'
 import {View, TouchableOpacity, Text} from 'react-native'
-import PropTypes from 'prop-types'
 import {enableScreens} from 'react-native-screens'
 import {createNativeStackNavigator} from 'react-native-screens/native-stack'
-import EntryPoint from '../screens/EntryPoint'
+import EntryPoint from './EntryPoint'
 
 enableScreens()
 const Stack = createNativeStackNavigator()
@@ -43,7 +42,7 @@ const Detail = ({route, navigation}) => {
     )
 }
 
-const App = () => {
+const AuthNavigator = () => {
     return (
         <Stack.Navigator>
             <Stack.Screen
@@ -58,24 +57,4 @@ const App = () => {
     )
 }
 
-App.propTypes = {
-    counter: PropTypes.arrayOf(
-        PropTypes.shape({
-            counterNum: PropTypes.number,
-        })
-    ),
-    handleIncrement: PropTypes.func,
-    handleDecrement: PropTypes.func,
-    handleAddCounter: PropTypes.func,
-    handleRemoveCounter: PropTypes.func,
-}
-
-App.defaultProps = {
-    counter: [],
-    handleIncrement: () => console.warn('handleIncrement not defined'),
-    handleDecrement: () => console.warn('handleDecrement not defined'),
-    handleAddCounter: () => console.warn('handleAddCounter not defiend'),
-    handleRemoveCounter: () => console.warn('handleRemoveCounter not defiend'),
-}
-
-export default App
+export default AuthNavigator
