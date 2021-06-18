@@ -1,11 +1,4 @@
-export const INCREMENT = 'INCREMENT'
-export const DECREMENT = 'DECREMENT'
+import {createAction} from '@reduxjs/toolkit'
 
-export const ADD = 'ADD'
-export const REMOVE = 'REMOVE'
-
-/*
- * User related Types
- */
-export const setUser = 'SETUSER'
-export const setUserChar = 'SETUSERCHAR'
+export const setUser = createAction('user/SET')
+export const setUserChar = createAction('user/char/SET')
