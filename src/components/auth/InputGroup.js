@@ -1,12 +1,19 @@
 import React from 'react'
 import {animated, useSpring} from 'react-spring'
-import {StyleSheet, TextInput, View} from 'react-native'
+import {StyleSheet, TextInput, View, Text} from 'react-native'
 import ValueConst from '../../constant/ValueConst'
 import CustomButton from '../CustomButton'
 
+import {connect} from 'react-redux'
+import {getUser} from '../../store/Selector'
+import UserSlice from '../../store/slices/UserSlice'
+
 const AnimatedView = animated(View)
 
-export const InputGroup = props => {
+const InputGroupComponent = props => {
+    console.log(props)
+    console.log(props.user)
+    console.log(props.user.nickName)
     const animation = useSpring({
         to: {opacity: 1},
         from: {opacity: 0},
@@ -42,14 +49,27 @@ export const InputGroup = props => {
                     <CustomButton
                         title="취소"
                         onPress={props.onCancelPress}
-                        color={ValueConst.colors.white}
-                        textColor={ValueConst.colors.colorPrimaryDark}
+                        color={ValueConst.colors.themeColor}
+                        textColor={ValueConst.colors.white}
                     />
+                    <Text style={styles.test}>{props.user.id}</Text>
+                    <Text style={styles.test}>{props.user.nickname}</Text>
                 </View>
             </View>
         </AnimatedView>
     )
 }
+
+const mapStateToProps = state => ({
+    test: state.info,
+    user: getUser(state),
+})
+
+const mapDispatchToProps = dispatch => ({
+    setUser: info => dispatch(UserSlice.actions.setUser(info)),
+})
+
+export const InputGroup = connect(mapStateToProps, mapDispatchToProps)(InputGroupComponent)
 
 const styles = StyleSheet.create({
     groupLayout: {
@@ -75,5 +95,15 @@ const styles = StyleSheet.create({
         color: ValueConst.colors.colorPrimaryDark,
         fontFamily: ValueConst.font.jalnan,
         width: '100%',
+    },
+    test: {
+        marginTop: 2,
+        marginBottom: 2,
+        height: ValueConst.dimensions.button_height,
+        // backgroundColor: ValueConst.colors.white,
+        color: ValueConst.colors.white,
+        fontFamily: ValueConst.font.jalnan,
+        width: '100%',
+        textAlign: 'center',
     },
 })

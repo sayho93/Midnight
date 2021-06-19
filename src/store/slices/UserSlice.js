@@ -1,11 +1,11 @@
 import {createSlice} from '@reduxjs/toolkit'
-import NetUtil from "../../api/NetUtil";
+import NetUtil from '../../api/NetUtil'
 
 const UserSlice = createSlice({
     name: 'user',
     initialState: {
         loading: false,
-        user: {
+        info: {
             id: 0,
             account: '',
             email: '',
@@ -35,12 +35,33 @@ const UserSlice = createSlice({
                 if (state.loading === false) state.loading = true
             },
         },
+        setNickName: {
+            reducer: (state, action) => {
+                state.info.nickName = action.payload
+            },
+        },
+        setProfileId: {
+            reducer: (state, action) => {
+                state.info.profileId = action.payload
+            },
+        },
+        setPush: {
+            reducer: (state, action) => {
+                state.info.push = action.payload
+            },
+        },
+        setBgId: {
+            reducer: (state, action) => {
+                state.info.bgId = action.payload
+            },
+        },
         setUser: {
             reducer: (state, action) => {
                 if (state.loading === true) {
                     state.loading = false
-                    state.user = action.payload
+                    state.info = action.payload
                 }
+                state.info = action.payload
             },
         },
         setUserChar: {

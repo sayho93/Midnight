@@ -26,7 +26,7 @@ import ValueConst from '../../constant/ValueConst'
 import ButtonGroup from '../../components/auth/ButtonGroup'
 import {InputGroup} from '../../components/auth/InputGroup'
 
-import {useDispatch, useSelector} from 'react-redux'
+import {useDispatch} from 'react-redux'
 import UserSlice from '../../store/slices/UserSlice'
 import Store from '../../store/Store'
 

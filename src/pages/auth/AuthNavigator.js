@@ -12,7 +12,6 @@ import {View, TouchableOpacity, Text} from 'react-native'
 import {enableScreens} from 'react-native-screens'
 import {createNativeStackNavigator} from 'react-native-screens/native-stack'
 import EntryPoint from './EntryPoint'
-import Store from '../../store/Store'
 
 enableScreens()
 const Stack = createNativeStackNavigator()
@@ -42,29 +41,6 @@ const Detail = ({route, navigation}) => {
         </>
     )
 }
-import * as Selector from '../../store/Selector'
-import UserSlice from '../../store/slices/UserSlice'
-import {connect} from 'react-redux'
-
-const makeMapSateToProps = () => {
-    const getUser = Selector.getUser()
-    const mapStateToProps = (state, props) => {
-        return {
-            user: getUser(state, props),
-        }
-    }
-    return mapStateToProps
-}
-
-const mapDispatchToProps = dispatch => {
-    return {
-        onClick: data => {
-            dispatch(UserSlice.actions.setUser(data))
-        },
-    }
-}
-
-// const MappedEntryPoint = connect(makeMapSateToProps, mapDispatchToProps)(EntryPoint)
 
 const AuthNavigator = () => {
     return (
