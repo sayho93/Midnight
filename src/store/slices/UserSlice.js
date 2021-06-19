@@ -1,8 +1,10 @@
 import {createSlice} from '@reduxjs/toolkit'
+import NetUtil from "../../api/NetUtil";
 
 const UserSlice = createSlice({
     name: 'user',
     initialState: {
+        loading: false,
         user: {
             id: 0,
             account: '',
@@ -28,9 +30,17 @@ const UserSlice = createSlice({
         characters: [],
     },
     reducers: {
+        setLoading: {
+            reducer: (state, action) => {
+                if (state.loading === false) state.loading = true
+            },
+        },
         setUser: {
             reducer: (state, action) => {
-                state.user = action.payload
+                if (state.loading === true) {
+                    state.loading = false
+                    state.user = action.payload
+                }
             },
         },
         setUserChar: {
@@ -48,3 +58,8 @@ const UserSlice = createSlice({
 })
 
 export default UserSlice
+
+// const fetchUser = (email, password) => async dispatch => {
+//     dispatch(setLoading())
+//     const user = await NetUtil.login(email, password)
+// }

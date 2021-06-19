@@ -70,7 +70,6 @@ const EntryPoint = ({route, navigation}) => {
             } else {
                 //-------TEST
                 dispatch(UserSlice.actions.setUser(res.data))
-                console.log(Store.getState())
                 //-------TEST
                 if (Platform.OS === 'android') ToastAndroid.show(res.returnMessage, ToastAndroid.SHORT)
                 else Alert.alert(res.returnMessage)

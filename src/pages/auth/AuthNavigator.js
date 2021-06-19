@@ -18,7 +18,6 @@ enableScreens()
 const Stack = createNativeStackNavigator()
 
 function DetailsScreen({navigation}) {
-    console.log(Store.getState())
     return (
         <View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
             <TouchableOpacity onPress={() => navigation.navigate('Detail', {count: 1})}>
@@ -30,7 +29,6 @@ function DetailsScreen({navigation}) {
 
 const Detail = ({route, navigation}) => {
     const {count} = route.params
-    console.log(Store.getState())
     return (
         <>
             <TouchableOpacity onPress={() => navigation.popToTop('Home')} style={{backgroundColor: 'yellow', flex: 1}}>
@@ -44,9 +42,31 @@ const Detail = ({route, navigation}) => {
         </>
     )
 }
+import * as Selector from '../../store/Selector'
+import UserSlice from '../../store/slices/UserSlice'
+import {connect} from 'react-redux'
+
+const makeMapSateToProps = () => {
+    const getUser = Selector.getUser()
+    const mapStateToProps = (state, props) => {
+        return {
+            user: getUser(state, props),
+        }
+    }
+    return mapStateToProps
+}
+
+const mapDispatchToProps = dispatch => {
+    return {
+        onClick: data => {
+            dispatch(UserSlice.actions.setUser(data))
+        },
+    }
+}
+
+// const MappedEntryPoint = connect(makeMapSateToProps, mapDispatchToProps)(EntryPoint)
 
 const AuthNavigator = () => {
-    console.log(Store.getState())
     return (
         <Stack.Navigator>
             <Stack.Screen
