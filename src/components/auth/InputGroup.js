@@ -1,12 +1,12 @@
 import React from 'react'
 import {animated, useSpring} from 'react-spring'
 import {StyleSheet, TextInput, View, Text} from 'react-native'
-import ValueConst from '../../constant/ValueConst'
-import CustomButton from '../CustomButton'
+import ValueConst from 'constant/ValueConst'
+import CustomButton from 'components/CustomButton'
 
 import {connect} from 'react-redux'
-import {getUser} from '../../store/Selector'
-import UserSlice from '../../store/slices/UserSlice'
+import {getUser} from 'store/Selector'
+import UserSlice from 'store/slices/UserSlice'
 
 const AnimatedView = animated(View)
 

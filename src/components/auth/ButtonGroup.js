@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
 import {Image, StyleSheet, View} from 'react-native'
-import CustomButton from '../CustomButton'
-import ValueConst from '../../constant/ValueConst'
+import CustomButton from 'components/CustomButton'
+import ValueConst from 'constant/ValueConst'
 
 export default class ButtonGroup extends Component {
     constructor(props) {

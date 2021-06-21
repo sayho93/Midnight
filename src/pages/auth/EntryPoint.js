@@ -102,12 +102,7 @@ const EntryPoint = ({route, navigation}) => {
             <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
             <KeyboardAvoidingView behavior={Platform.OS === 'ios' ? 'position' : 'position'}>
                 <View style={styles.logoLayout}>
-                    <LottieView
-                        source={loveAnimation}
-                        style={styles.lottie}
-                        autoPlay
-                        loop
-                    />
+                    <LottieView source={loveAnimation} style={styles.lottie} autoPlay loop />
                     <Image style={styles.logo} source={logo} />
                 </View>
                 {group}

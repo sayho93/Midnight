@@ -1,5 +1,5 @@
 import {createSlice} from '@reduxjs/toolkit'
-import NetUtil from '../../api/NetUtil'
+import NetUtil from 'api/NetUtil'
 
 const UserSlice = createSlice({
     name: 'user',
