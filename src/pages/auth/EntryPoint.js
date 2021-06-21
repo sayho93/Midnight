@@ -29,6 +29,7 @@ import {InputGroup} from 'components/auth/InputGroup'
 import {useDispatch} from 'react-redux'
 import UserSlice from 'store/slices/UserSlice'
 import Store from 'store/Store'
+import AsyncStorage from '@react-native-async-storage/async-storage'
 
 import loveAnimation from 'animations/love-explosion.json'
 import logo from 'img/title_logo_small.png'
@@ -66,7 +67,7 @@ const EntryPoint = ({route, navigation}) => {
     }
 
     const onLoginPress = async () => {
-        await NetUtil.login(loginInfo.email, loginInfo.pw).then(res => {
+        await NetUtil.login(loginInfo.email, loginInfo.pw).then(async res => {
             if (res.returnCode !== 1) {
                 if (Platform.OS === 'android') ToastAndroid.show(res.returnMessage, ToastAndroid.SHORT)
                 else Alert.alert(res.returnMessage)
@@ -77,6 +78,7 @@ const EntryPoint = ({route, navigation}) => {
                 if (Platform.OS === 'android') ToastAndroid.show(res.returnMessage, ToastAndroid.SHORT)
                 else Alert.alert(res.returnMessage)
             }
+            await AsyncStorage.setItem('user', JSON.stringify(res.data))
         })
     }
 

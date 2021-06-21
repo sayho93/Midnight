@@ -8,7 +8,7 @@
 import 'react-native-gesture-handler'
 
 import React from 'react'
-import {View, TouchableOpacity, Text} from 'react-native'
+import {Text, TouchableOpacity, View} from 'react-native'
 import {enableScreens} from 'react-native-screens'
 import {createNativeStackNavigator} from 'react-native-screens/native-stack'
 import EntryPoint from 'pages/auth/EntryPoint'
@@ -43,7 +43,19 @@ const Detail = ({route, navigation}) => {
     )
 }
 
-const AuthNavigator = () => {
+// const getData = async () => {
+//     try {
+//         return await AsyncStorage.getItem('user')
+//     } catch (e) {
+//         console.log(e)
+//     }
+// }
+
+const AuthNavigator = async () => {
+    // await getData().then(res => {
+    //     console.log('AsyncStorage User')
+    //     console.log(res)
+    // })
     return (
         <Stack.Navigator>
             <Stack.Screen
