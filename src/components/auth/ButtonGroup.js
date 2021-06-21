@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
 import {Image, StyleSheet, View} from 'react-native'
 import CustomButton from 'components/CustomButton'
-import ValueConst from 'constant/ValueConst'
+import ValueConst from 'constants/ValueConst'
 
 import bottomLogo from 'assets/img/text_logo_gray_small.png'
 

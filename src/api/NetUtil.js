@@ -1,5 +1,5 @@
 import axios from 'axios'
-import Configs from 'constant/Configs'
+import Configs from 'constants/Configs'
 
 const NetUtil = {
     login: (email, pw) => {

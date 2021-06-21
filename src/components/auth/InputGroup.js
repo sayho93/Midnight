@@ -1,7 +1,7 @@
 import React from 'react'
 import {animated, useSpring} from 'react-spring'
 import {StyleSheet, TextInput, View, Text} from 'react-native'
-import ValueConst from 'constant/ValueConst'
+import ValueConst from 'constants/ValueConst'
 import CustomButton from 'components/CustomButton'
 
 import {connect} from 'react-redux'
