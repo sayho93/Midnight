@@ -83,6 +83,7 @@ const EntryPoint = ({route, navigation}) => {
     }
 
     const onCancelPress = () => {
+        console.log('Store.getState()')
         console.log(Store.getState())
         toggleHandler()
     }

@@ -7,7 +7,7 @@
  */
 import 'react-native-gesture-handler'
 
-import React from 'react'
+import React, {useEffect} from 'react'
 import {Text, TouchableOpacity, View} from 'react-native'
 import {enableScreens} from 'react-native-screens'
 import {createNativeStackNavigator} from 'react-native-screens/native-stack'
@@ -43,19 +43,27 @@ const Detail = ({route, navigation}) => {
     )
 }
 
-// const getData = async () => {
-//     try {
-//         return await AsyncStorage.getItem('user')
-//     } catch (e) {
-//         console.log(e)
-//     }
-// }
+const getData = () => {
+    return new Promise(async (resolve, reject) => {
+        await AsyncStorage.getItem('user')
+            .then(res => {
+                resolve(res)
+            })
+            .catch(e => {
+                console.log(e)
+                reject(e)
+            })
+    })
+}
 
-const AuthNavigator = async () => {
-    // await getData().then(res => {
-    //     console.log('AsyncStorage User')
-    //     console.log(res)
-    // })
+const AuthNavigator = () => {
+    useEffect(() => {
+        getData().then(res => {
+            console.log('AsyncStorage User')
+            console.log(res)
+        })
+    })
+
     return (
         <Stack.Navigator>
             <Stack.Screen

@@ -3,6 +3,8 @@ import {Image, StyleSheet, View} from 'react-native'
 import CustomButton from 'components/CustomButton'
 import ValueConst from 'constant/ValueConst'
 
+import bottomLogo from 'assets/img/text_logo_gray_small.png'
+
 export default class ButtonGroup extends Component {
     constructor(props) {
         super(props)
@@ -24,7 +26,7 @@ export default class ButtonGroup extends Component {
                         color={ValueConst.colors.white}
                         textColor={ValueConst.colors.colorPrimaryDark}
                     />
-                    <Image style={styles.bottomLogo} source={require('../../../assets/img/text_logo_gray_small.png')} />
+                    <Image style={styles.bottomLogo} source={bottomLogo} />
                 </View>
             </View>
         )

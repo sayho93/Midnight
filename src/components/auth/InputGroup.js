@@ -11,9 +11,6 @@ import UserSlice from 'store/slices/UserSlice'
 const AnimatedView = animated(View)
 
 const InputGroupComponent = props => {
-    console.log(props)
-    console.log(props.user)
-    console.log(props.user.nickName)
     const animation = useSpring({
         to: {opacity: 1},
         from: {opacity: 0},
