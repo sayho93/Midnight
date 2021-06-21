@@ -20,15 +20,18 @@ import {
     KeyboardAvoidingView,
 } from 'react-native'
 
-import NetUtil from '../../api/NetUtil'
+import NetUtil from 'api/NetUtil'
 import LottieView from 'lottie-react-native'
-import ValueConst from '../../constant/ValueConst'
-import ButtonGroup from '../../components/auth/ButtonGroup'
-import {InputGroup} from '../../components/auth/InputGroup'
+import ValueConst from 'constant/ValueConst'
+import ButtonGroup from 'components/auth/ButtonGroup'
+import {InputGroup} from 'components/auth/InputGroup'
 
 import {useDispatch} from 'react-redux'
-import UserSlice from '../../store/slices/UserSlice'
-import Store from '../../store/Store'
+import UserSlice from 'store/slices/UserSlice'
+import Store from 'store/Store'
+
+import loveAnimation from 'animations/love-explosion.json'
+import logo from 'img/title_logo_small.png'
 
 const EntryPoint = ({route, navigation}) => {
     const [state, setToggleState] = useState({
@@ -97,15 +100,15 @@ const EntryPoint = ({route, navigation}) => {
     return (
         <SafeAreaView style={styles.backgroundStyle}>
             <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
-            <KeyboardAvoidingView behavior={Platform.OS === 'ios' ? 'position' : 'height'}>
+            <KeyboardAvoidingView behavior={Platform.OS === 'ios' ? 'position' : 'position'}>
                 <View style={styles.logoLayout}>
                     <LottieView
-                        source={require('../../../assets/animations/love-explosion.json')}
+                        source={loveAnimation}
                         style={styles.lottie}
                         autoPlay
                         loop
                     />
-                    <Image style={styles.logo} source={require('../../../assets/img/title_logo_small.png')} />
+                    <Image style={styles.logo} source={logo} />
                 </View>
                 {group}
             </KeyboardAvoidingView>

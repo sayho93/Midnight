@@ -1,17 +1,16 @@
 module.exports = {
     presets: ['module:metro-react-native-babel-preset'],
     plugins: [
-        ['@babel/plugin-transform-flow-strip-types'],
         [
-            '@babel/plugin-proposal-decorators',
+            'module-resolver',
             {
-                legacy: true,
-            },
-        ],
-        [
-            '@babel/plugin-proposal-class-properties',
-            {
-                loose: true,
+                root: ['./src'],
+                alias: {
+                    assets: './assets',
+                    img: './assets/img',
+                    font: './assets/font',
+                    animations: './assets/animations',
+                },
             },
         ],
     ],
