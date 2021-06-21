@@ -12,6 +12,7 @@ import {View, TouchableOpacity, Text} from 'react-native'
 import {enableScreens} from 'react-native-screens'
 import {createNativeStackNavigator} from 'react-native-screens/native-stack'
 import EntryPoint from 'pages/auth/EntryPoint'
+import AsyncStorage from '@react-native-async-storage/async-storage'
 
 enableScreens()
 const Stack = createNativeStackNavigator()

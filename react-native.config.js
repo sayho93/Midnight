@@ -4,4 +4,4 @@ module.exports = {
         android: {}, // grouped into "project"
     },
     assets: ['./assets/font/'], // 당신의 font 파일들이 모여있는 폴더
-};
+}
