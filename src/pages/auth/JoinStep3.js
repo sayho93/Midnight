@@ -4,9 +4,9 @@ import GlobalStyle from 'styles/GlobalStyle'
 import ValueConst from 'constants/ValueConst'
 
 const JoinStep3 = ({route, navigation}) => {
-    useEffect(() => {
-        navigation.setOptions({title: '관심사 선택'})
-    })
+    // useEffect(() => {
+    //     navigation.setOptions({title: '관심사 선택'})
+    // }, [navigation])
     // const {count} = route.params
     return (
         <View style={GlobalStyle.background}>

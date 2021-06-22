@@ -42,17 +42,43 @@ const AuthNavigator = () => {
                 headerTitleStyle: GlobalStyle.navigationHeaderTitle,
                 headerTintColor: ValueConst.colors.white,
                 headerBackTitleStyle: GlobalStyle.navigationBtnTitle,
+                stackAnimation: 'slide_from_right',
+                headerTopInsetEnabled: false,
             }}>
             <Stack.Screen
                 name="EntryPoint"
                 component={EntryPoint}
-                initialParams={{itemId: 42}}
+                // initialParams={{itemId: 42}}
                 options={{headerShown: false}}
             />
-            <Stack.Screen name="JoinStep1" component={JoinStep1} options={{title: '회원가입'}} />
-            <Stack.Screen name="JoinStep2" component={JoinStep2} options={{title: '세부 정보'}} />
-            <Stack.Screen name="JoinStep3" component={JoinStep3} aptions={{title: '관심사 선택1111'}} />
-            <Stack.Screen name="JoinStep4" component={JoinStep3} aptions={{headerTitle: '관심사 선택1111'}} />
+            <Stack.Screen
+                name="JoinStep1"
+                component={JoinStep1}
+                options={{
+                    title: '회원가입',
+                }}
+            />
+            <Stack.Screen
+                name="JoinStep2"
+                component={JoinStep2}
+                options={{
+                    title: '세부 정보',
+                }}
+            />
+            <Stack.Screen
+                name="JoinStep3"
+                component={JoinStep3}
+                options={{
+                    title: '관심사 선택',
+                }}
+            />
+            <Stack.Screen
+                name="JoinStep4"
+                component={JoinStep3}
+                options={{
+                    title: '테스트',
+                }}
+            />
         </Stack.Navigator>
     )
 }
