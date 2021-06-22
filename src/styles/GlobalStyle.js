@@ -1,5 +1,6 @@
 import {StyleSheet} from 'react-native'
-import ValueConst from '../constants/ValueConst'
+// import ValueConst from '../constants/ValueConst'
+import ValueConst from 'constants/ValueConst'
 
 const GlobalStyle = StyleSheet.create({
     background: {

@@ -16,9 +16,9 @@ import {useDispatch} from 'react-redux'
 import UserSlice from 'store/slices/UserSlice'
 import ValueConst from 'constants/ValueConst'
 
-import JoinStep1 from './JoinStep1'
-import JoinStep2 from './JoinStep2'
-import GlobalStyle from '../../styles/GlobalStyle'
+import JoinStep1 from 'pages/auth/JoinStep1'
+import JoinStep2 from 'pages/auth/JoinStep2'
+import GlobalStyle from 'styles/GlobalStyle'
 
 enableScreens()
 const Stack = createNativeStackNavigator()

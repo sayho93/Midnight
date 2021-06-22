@@ -22,7 +22,6 @@ import {
 
 import NetUtil from 'api/NetUtil'
 import LottieView from 'lottie-react-native'
-import ValueConst from 'constants/ValueConst'
 import ButtonGroup from 'components/auth/ButtonGroup'
 import {InputGroup} from 'components/auth/InputGroup'
 

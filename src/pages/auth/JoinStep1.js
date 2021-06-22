@@ -1,7 +1,7 @@
 import React, {useEffect} from 'react'
 import {Text, TouchableOpacity, View, StyleSheet} from 'react-native'
 import GlobalStyle from 'styles/GlobalStyle'
-import ValueConst from '../../constants/ValueConst'
+import ValueConst from 'constants/ValueConst'
 
 const JoinStep1 = ({navigation}) => {
     return (
