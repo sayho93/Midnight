@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react'
+import React from 'react'
 import {Text, TouchableOpacity, View, StyleSheet} from 'react-native'
 import GlobalStyle from 'styles/GlobalStyle'
 import ValueConst from 'constants/ValueConst'
@@ -11,12 +11,13 @@ const JoinStep1 = ({navigation}) => {
             </TouchableOpacity>
         </View>
         // <View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
-        //
         // </View>
     )
 }
 
+// eslint-disable-next-line no-unused-vars
 const styles = StyleSheet.create({
+    // eslint-disable-next-line react-native/no-unused-styles
     test: {
         backgroundColor: ValueConst.colors.themeColor,
     },
