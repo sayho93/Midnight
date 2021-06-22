@@ -53,6 +53,7 @@ const AuthNavigator = () => {
                 headerStyle: GlobalStyle.navigationHeader,
                 headerTitleStyle: GlobalStyle.navigationHeaderTitle,
                 headerTintColor: ValueConst.colors.white,
+                headerBackTitleStyle: GlobalStyle.navigationBtnTitle,
             }}>
             <Stack.Screen
                 name="EntryPoint"
