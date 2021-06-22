@@ -63,7 +63,7 @@ const EntryPoint = ({route, navigation}) => {
     }
 
     const onJoinPress = () => {
-        navigation.navigate('DetailsScreen')
+        navigation.navigate('JoinStep1')
     }
 
     const onLoginPress = async () => {

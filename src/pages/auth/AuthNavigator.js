@@ -16,34 +16,11 @@ import AsyncStorage from '@react-native-async-storage/async-storage'
 import {useDispatch} from 'react-redux'
 import UserSlice from '../../store/slices/UserSlice'
 
+import JoinStep1 from './JoinStep1'
+import JoinStep2 from './JoinStep2'
+
 enableScreens()
 const Stack = createNativeStackNavigator()
-
-function DetailsScreen({navigation}) {
-    return (
-        <View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
-            <TouchableOpacity onPress={() => navigation.navigate('Detail', {count: 1})}>
-                <Text>Detail Screen</Text>
-            </TouchableOpacity>
-        </View>
-    )
-}
-
-const Detail = ({route, navigation}) => {
-    const {count} = route.params
-    return (
-        <>
-            <TouchableOpacity onPress={() => navigation.popToTop('Home')} style={{backgroundColor: 'yellow', flex: 1}}>
-                <Text>Back</Text>
-            </TouchableOpacity>
-            <TouchableOpacity
-                onPress={() => navigation.push('Detail', {count: count + 1})}
-                style={{backgroundColor: 'blue', flex: 1}}>
-                <Text>Detail {count}</Text>
-            </TouchableOpacity>
-        </>
-    )
-}
 
 const getData = () => {
     return new Promise(async (resolve, reject) => {
@@ -77,8 +54,8 @@ const AuthNavigator = () => {
                 initialParams={{itemId: 42}}
                 options={{headerShown: false}}
             />
-            <Stack.Screen name="Detail" component={Detail} />
-            <Stack.Screen name="DetailsScreen" component={DetailsScreen} />
+            <Stack.Screen name="JoinStep1" component={JoinStep1} />
+            <Stack.Screen name="Detail" component={JoinStep2} />
         </Stack.Navigator>
     )
 }
