@@ -13,6 +13,8 @@ import {enableScreens} from 'react-native-screens'
 import {createNativeStackNavigator} from 'react-native-screens/native-stack'
 import EntryPoint from 'pages/auth/EntryPoint'
 import AsyncStorage from '@react-native-async-storage/async-storage'
+import {useDispatch} from 'react-redux'
+import UserSlice from '../../store/slices/UserSlice'
 
 enableScreens()
 const Stack = createNativeStackNavigator()
@@ -47,7 +49,7 @@ const getData = () => {
     return new Promise(async (resolve, reject) => {
         await AsyncStorage.getItem('user')
             .then(res => {
-                resolve(res)
+                resolve(JSON.parse(res))
             })
             .catch(e => {
                 console.log(e)
@@ -57,10 +59,13 @@ const getData = () => {
 }
 
 const AuthNavigator = () => {
+    const dispatch = useDispatch()
+
     useEffect(() => {
         getData().then(res => {
             console.log('AsyncStorage User')
             console.log(res)
+            dispatch(UserSlice.actions.setUser(res))
         })
     })
 
