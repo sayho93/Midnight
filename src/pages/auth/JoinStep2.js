@@ -10,7 +10,7 @@ const JoinStep2 = ({route, navigation}) => {
                 <Text>Back</Text>
             </TouchableOpacity>
             <TouchableOpacity
-                onPress={() => navigation.push('Detail', {count: count + 1})}
+                onPress={() => navigation.navigate('JoinStep3', {count: count + 1})}
                 style={{backgroundColor: 'blue', flex: 1}}>
                 <Text>Detail {count}</Text>
             </TouchableOpacity>

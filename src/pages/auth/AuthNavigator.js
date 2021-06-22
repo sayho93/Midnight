@@ -18,6 +18,7 @@ import ValueConst from 'constants/ValueConst'
 
 import JoinStep1 from 'pages/auth/JoinStep1'
 import JoinStep2 from 'pages/auth/JoinStep2'
+import JoinStep3 from 'pages/auth/JoinStep3'
 import GlobalStyle from 'styles/GlobalStyle'
 
 enableScreens()
@@ -61,20 +62,9 @@ const AuthNavigator = () => {
                 initialParams={{itemId: 42}}
                 options={{headerShown: false}}
             />
-            <Stack.Screen
-                name="JoinStep1"
-                component={JoinStep1}
-                options={{
-                    headerTitle: '이메일 인증',
-                }}
-            />
-            <Stack.Screen
-                name="Detail"
-                component={JoinStep2}
-                options={{
-                    headerTitle: '프로필 사진 및 소개',
-                }}
-            />
+            <Stack.Screen name="JoinStep1" component={JoinStep1} options={{headerTitle: '회원가입'}} />
+            <Stack.Screen name="JoinStep2" component={JoinStep2} options={{headerTitle: '세부 정보'}} />
+            <Stack.Screen name="JoinStep3" component={JoinStep3} aptions={{headerTitle: 'asdasd'}} />
         </Stack.Navigator>
     )
 }

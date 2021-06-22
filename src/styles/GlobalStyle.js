@@ -16,6 +16,7 @@ const GlobalStyle = StyleSheet.create({
     },
     navigationBtnTitle: {
         fontFamily: ValueConst.font.jalnan,
+        fontSize: ValueConst.dimensions.font_size_default,
     },
 })
 
