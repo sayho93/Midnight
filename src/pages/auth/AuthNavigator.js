@@ -11,10 +11,10 @@ import React, {useEffect} from 'react'
 import {enableScreens} from 'react-native-screens'
 import {createNativeStackNavigator} from 'react-native-screens/native-stack'
 import EntryPoint from 'pages/auth/EntryPoint'
-import AsyncStorage from '@react-native-async-storage/async-storage'
 import {useDispatch} from 'react-redux'
 import UserSlice from 'store/slices/UserSlice'
 import ValueConst from 'constants/ValueConst'
+import Utils from 'utils/Utils'
 
 import JoinStep1 from 'pages/auth/JoinStep1'
 import JoinStep2 from 'pages/auth/JoinStep2'
@@ -24,24 +24,11 @@ import GlobalStyle from 'styles/GlobalStyle'
 enableScreens()
 const Stack = createNativeStackNavigator()
 
-const getData = () => {
-    return new Promise(async (resolve, reject) => {
-        await AsyncStorage.getItem('user')
-            .then(res => {
-                resolve(JSON.parse(res))
-            })
-            .catch(e => {
-                console.log(e)
-                reject(e)
-            })
-    })
-}
-
 const AuthNavigator = () => {
     const dispatch = useDispatch()
 
     useEffect(() => {
-        getData().then(res => {
+        Utils.getAsyncStorageData().then(res => {
             console.log('AsyncStorage User')
             console.log(res)
             dispatch(UserSlice.actions.setUser(res))
@@ -62,9 +49,10 @@ const AuthNavigator = () => {
                 initialParams={{itemId: 42}}
                 options={{headerShown: false}}
             />
-            <Stack.Screen name="JoinStep1" component={JoinStep1} options={{headerTitle: '회원가입'}} />
-            <Stack.Screen name="JoinStep2" component={JoinStep2} options={{headerTitle: '세부 정보'}} />
-            <Stack.Screen name="JoinStep3" component={JoinStep3} aptions={{headerTitle: 'asdasd'}} />
+            <Stack.Screen name="JoinStep1" component={JoinStep1} options={{title: '회원가입'}} />
+            <Stack.Screen name="JoinStep2" component={JoinStep2} options={{title: '세부 정보'}} />
+            <Stack.Screen name="JoinStep3" component={JoinStep3} aptions={{title: '관심사 선택1111'}} />
+            <Stack.Screen name="JoinStep4" component={JoinStep3} aptions={{headerTitle: '관심사 선택1111'}} />
         </Stack.Navigator>
     )
 }
