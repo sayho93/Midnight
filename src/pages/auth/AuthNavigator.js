@@ -8,13 +8,13 @@
 import 'react-native-gesture-handler'
 
 import React, {useEffect} from 'react'
-import {Text, TouchableOpacity, View} from 'react-native'
 import {enableScreens} from 'react-native-screens'
 import {createNativeStackNavigator} from 'react-native-screens/native-stack'
 import EntryPoint from 'pages/auth/EntryPoint'
 import AsyncStorage from '@react-native-async-storage/async-storage'
 import {useDispatch} from 'react-redux'
-import UserSlice from '../../store/slices/UserSlice'
+import UserSlice from 'store/slices/UserSlice'
+import ValueConst from 'constants/ValueConst'
 
 import JoinStep1 from './JoinStep1'
 import JoinStep2 from './JoinStep2'
@@ -47,15 +47,33 @@ const AuthNavigator = () => {
     })
 
     return (
-        <Stack.Navigator>
+        <Stack.Navigator
+            screenOptions={{
+                headerStyle: {
+                    backgroundColor: ValueConst.colors.themeColor,
+                },
+                headerTintColor: ValueConst.colors.white,
+            }}>
             <Stack.Screen
                 name="EntryPoint"
                 component={EntryPoint}
                 initialParams={{itemId: 42}}
                 options={{headerShown: false}}
             />
-            <Stack.Screen name="JoinStep1" component={JoinStep1} />
-            <Stack.Screen name="Detail" component={JoinStep2} />
+            <Stack.Screen
+                name="JoinStep1"
+                component={JoinStep1}
+                options={{
+                    headerTitle: '이메일 인증',
+                }}
+            />
+            <Stack.Screen
+                name="Detail"
+                component={JoinStep2}
+                options={{
+                    headerTitle: '프로필 사진 및 소개',
+                }}
+            />
         </Stack.Navigator>
     )
 }

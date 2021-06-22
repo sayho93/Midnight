@@ -33,6 +33,7 @@ import AsyncStorage from '@react-native-async-storage/async-storage'
 
 import loveAnimation from 'animations/love-explosion.json'
 import logo from 'img/title_logo_small.png'
+import GlobalStyle from 'styles/GlobalStyle'
 
 const EntryPoint = ({route, navigation}) => {
     const [state, setToggleState] = useState({
@@ -101,7 +102,7 @@ const EntryPoint = ({route, navigation}) => {
     } else group = <ButtonGroup onLoginPress={toggleHandler} onJoinPress={onJoinPress} />
 
     return (
-        <SafeAreaView style={styles.backgroundStyle}>
+        <SafeAreaView style={GlobalStyle.backgroundStyle}>
             <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
             <KeyboardAvoidingView behavior={Platform.OS === 'ios' ? 'position' : 'position'}>
                 <View style={styles.logoLayout}>
@@ -115,10 +116,6 @@ const EntryPoint = ({route, navigation}) => {
 }
 
 const styles = StyleSheet.create({
-    backgroundStyle: {
-        backgroundColor: ValueConst.colors.themeColor,
-        height: '100%',
-    },
     logoLayout: {
         marginTop: 100,
         marginBottom: 50,
