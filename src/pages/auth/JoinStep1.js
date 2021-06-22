@@ -5,7 +5,7 @@ import ValueConst from '../../constants/ValueConst'
 
 const JoinStep1 = ({navigation}) => {
     return (
-        <View style={GlobalStyle.backgroundStyle}>
+        <View style={GlobalStyle.background}>
             <TouchableOpacity onPress={() => navigation.navigate('Detail', {count: 1})}>
                 <Text>Detail Screen</Text>
             </TouchableOpacity>

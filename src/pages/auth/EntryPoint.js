@@ -102,7 +102,7 @@ const EntryPoint = ({route, navigation}) => {
     } else group = <ButtonGroup onLoginPress={toggleHandler} onJoinPress={onJoinPress} />
 
     return (
-        <SafeAreaView style={GlobalStyle.backgroundStyle}>
+        <SafeAreaView style={GlobalStyle.background}>
             <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
             <KeyboardAvoidingView behavior={Platform.OS === 'ios' ? 'position' : 'position'}>
                 <View style={styles.logoLayout}>

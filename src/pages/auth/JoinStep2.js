@@ -5,7 +5,7 @@ import GlobalStyle from 'styles/GlobalStyle'
 const JoinStep2 = ({route, navigation}) => {
     const {count} = route.params
     return (
-        <View style={GlobalStyle.backgroundStyle}>
+        <View style={GlobalStyle.background}>
             <TouchableOpacity onPress={() => navigation.popToTop('Home')} style={{backgroundColor: 'yellow', flex: 1}}>
                 <Text>Back</Text>
             </TouchableOpacity>

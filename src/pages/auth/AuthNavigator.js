@@ -18,6 +18,7 @@ import ValueConst from 'constants/ValueConst'
 
 import JoinStep1 from './JoinStep1'
 import JoinStep2 from './JoinStep2'
+import GlobalStyle from '../../styles/GlobalStyle'
 
 enableScreens()
 const Stack = createNativeStackNavigator()
@@ -49,9 +50,8 @@ const AuthNavigator = () => {
     return (
         <Stack.Navigator
             screenOptions={{
-                headerStyle: {
-                    backgroundColor: ValueConst.colors.themeColor,
-                },
+                headerStyle: GlobalStyle.navigationHeader,
+                headerTitleStyle: GlobalStyle.navigationHeaderTitle,
                 headerTintColor: ValueConst.colors.white,
             }}>
             <Stack.Screen
