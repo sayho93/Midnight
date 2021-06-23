@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
 import {Image, StyleSheet, View} from 'react-native'
 import CustomButton from '../CustomButton'
-import ValueConst from '../../utils/ValueConst'
+import attr from '../../glob/attr'
 
 export default class ButtonGroup extends Component {
     constructor(props) {
@@ -15,14 +15,14 @@ export default class ButtonGroup extends Component {
                     <CustomButton
                         title="학교 이메일로 로그인"
                         onPress={this.props.onLoginPress}
-                        color={ValueConst.colors.colorPrimaryDark}
-                        textColor={ValueConst.colors.white}
+                        color={attr.colors.colorPrimaryDark}
+                        textColor={attr.colors.white}
                     />
                     <CustomButton
                         title="학교 이메일로 회원가입"
                         onPress={this.props.onJoinPress}
-                        color={ValueConst.colors.white}
-                        textColor={ValueConst.colors.colorPrimaryDark}
+                        color={attr.colors.white}
+                        textColor={attr.colors.colorPrimaryDark}
                     />
                     <Image style={styles.bottomLogo} source={require('../../../assets/img/text_logo_gray_small.png')} />
                 </View>

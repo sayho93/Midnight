@@ -1,7 +1,7 @@
 import React from 'react'
 import {animated, useSpring} from 'react-spring'
 import {StyleSheet, TextInput, View} from 'react-native'
-import ValueConst from '../../utils/ValueConst'
+import attr from '../glob/attr'
 import CustomButton from '../CustomButton'
 
 const AnimatedView = animated(View)
@@ -21,7 +21,7 @@ export const InputGroup = props => {
                         style={styles.input}
                         onChangeText={text => props.emailHandler(text)}
                         placeholder="이메일"
-                        placeholderTextColor={ValueConst.colors.thisgray}
+                        placeholderTextColor={attr.colors.thisgray}
                     />
                     <TextInput
                         style={styles.input}
@@ -31,13 +31,13 @@ export const InputGroup = props => {
                         returnKeyType="go"
                         secureTextEntry={true}
                         autoCorrect={false}
-                        placeholderTextColor={ValueConst.colors.thisgray}
+                        placeholderTextColor={attr.colors.thisgray}
                     />
                     <CustomButton
                         title="로그인"
                         onPress={props.onLoginPress}
-                        color={ValueConst.colors.colorPrimaryDark}
-                        textColor={ValueConst.colors.white}
+                        color={attr.colors.colorPrimaryDark}
+                        textColor={attr.colors.white}
                     />
                 </View>
             </View>
@@ -64,10 +64,10 @@ const styles = StyleSheet.create({
     input: {
         marginTop: 2,
         marginBottom: 2,
-        height: ValueConst.dimensions.button_height,
-        backgroundColor: ValueConst.colors.white,
-        color: ValueConst.colors.colorPrimaryDark,
-        fontFamily: ValueConst.font.jalnan,
+        height: attr.dimensions.button_height,
+        backgroundColor: attr.colors.white,
+        color: attr.colors.colorPrimaryDark,
+        fontFamily: attr.font.jalnan,
         width: '100%',
     },
 })

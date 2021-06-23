@@ -1,6 +1,6 @@
+import attr from '../glob/attr'
 import React, {Component} from 'react'
 import {TouchableOpacity, Text, StyleSheet} from 'react-native'
-import ValueConst from '../utils/ValueConst'
 
 export default class CustomButton extends Component {
     constructor(props) {
@@ -16,12 +16,12 @@ export default class CustomButton extends Component {
                 alignItems: 'center',
                 justifyContent: 'center',
                 backgroundColor: this.props.color,
-                height: ValueConst.dimensions.button_height,
+                height: attr.dimensions.button_height,
             },
             title: {
-                fontSize: ValueConst.dimensions.button_default,
+                fontSize: attr.dimensions.button_default,
                 color: this.props.textColor,
-                fontFamily: ValueConst.font.jalnan,
+                fontFamily: attr.font.jalnan,
             },
         })
 

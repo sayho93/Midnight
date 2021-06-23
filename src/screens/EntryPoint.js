@@ -1,10 +1,4 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- * @flow strict-local
- */
+
 import 'react-native-gesture-handler'
 
 import React, {useState} from 'react'
@@ -18,12 +12,12 @@ import {
     View,
     Alert,
     ToastAndroid,
-    KeyboardAvoidingView,
+    ScrollView,
 } from 'react-native'
 
 import NetUtil from '../utils/NetUtil'
+import GlobalStyle from '../glob/GlobalStyle'
 import LottieView from 'lottie-react-native'
-import ValueConst from '../utils/ValueConst'
 import ButtonGroup from '../components/auth/ButtonGroup'
 import {InputGroup} from '../components/auth/InputGroup'
 import PropTypes from 'prop-types'
@@ -39,12 +33,6 @@ const EntryPoint = ({route, navigation}) => {
     })
 
     const isDarkMode = useColorScheme() === 'dark'
-
-    const backgroundStyle = {
-        // backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
-        backgroundColor: ValueConst.colors.themeColor,
-        height: '100%',
-    }
 
     const toggleHandler = () => {
         setToggleState({
@@ -63,9 +51,9 @@ const EntryPoint = ({route, navigation}) => {
     let group = null
     if (state.toggle)
         group = <InputGroup onLoginPress={onLoginPress} emailHandler={emailHandler} pwHandler={pwHandler} />
-    else group = <ButtonGroup onLoginPress={toggleHandler} onJoinPress={onJoinPress} />
+    else group = <ButtonGroup onLoginPress={toggleHandler} onJoinPress={onJoinPressed} />
 
-    function onJoinPress() {
+    function onJoinPressed() {
         navigation.navigate('DetailsScreen')
     }
 
@@ -82,9 +70,9 @@ const EntryPoint = ({route, navigation}) => {
     }
 
     return (
-        <SafeAreaView style={backgroundStyle}>
+        <SafeAreaView style={GlobalStyle}>
             <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
-            <KeyboardAvoidingView behavior={Platform.OS === 'ios' ? 'position' : 'height'}>
+            <ScrollView behavior="position" showsVerticalScrollIndicator={false}>
                 <View style={styles.logoLayout}>
                     <LottieView
                         source={require('../../assets/animations/love-explosion.json')}
@@ -95,7 +83,7 @@ const EntryPoint = ({route, navigation}) => {
                     <Image style={styles.logo} source={require('../../assets/img/title_logo_small.png')} />
                 </View>
                 {group}
-            </KeyboardAvoidingView>
+            </ScrollView>
         </SafeAreaView>
     )
 }

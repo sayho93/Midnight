@@ -1,4 +1,4 @@
-const ValueConst = {
+export const attr = {
     dimensions: {
         progress_size: 20,
         intro_title_size: 45,
@@ -92,5 +92,3 @@ const ValueConst = {
         nunumSqueareRegular: 'nsqr',
     },
 }
-
-export default ValueConst
