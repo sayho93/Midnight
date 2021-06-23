@@ -31,7 +31,7 @@ const AuthNavigator = () => {
         Utils.getAsyncStorageData().then(res => {
             console.log('AsyncStorage User')
             console.log(res)
-            dispatch(UserSlice.actions.setUser(res))
+            if (res != null) dispatch(UserSlice.actions.setUser(res))
         })
     })
 

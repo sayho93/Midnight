@@ -33,6 +33,7 @@ import AsyncStorage from '@react-native-async-storage/async-storage'
 import loveAnimation from 'animations/love-explosion.json'
 import logo from 'img/title_logo_small.png'
 import GlobalStyle from 'styles/GlobalStyle'
+import ValueConst from 'constants/ValueConst'
 
 const EntryPoint = ({route, navigation}) => {
     const [state, setToggleState] = useState({
@@ -102,7 +103,10 @@ const EntryPoint = ({route, navigation}) => {
 
     return (
         <SafeAreaView style={GlobalStyle.background}>
-            <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
+            <StatusBar
+                backgroundColor={ValueConst.colors.themeColor}
+                barStyle={isDarkMode ? 'light-content' : 'dark-content'}
+            />
             <KeyboardAvoidingView behavior={Platform.OS === 'ios' ? 'position' : 'position'}>
                 <View style={styles.logoLayout}>
                     <LottieView source={loveAnimation} style={styles.lottie} autoPlay loop />
