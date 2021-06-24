@@ -1,3 +1,53 @@
 <resources>
     <string name="app_name">Midnight</string>
+    <string name="notification_title">미드나잇 알림</string>
+
+    <string name="ad_attribution">Ad</string>
+    <string name="review_package_name">kr.co.picklecode.helper.helper</string>
+
+    <string name="ADMOB_AD_CLIENT_ID">ca-app-pub-8943333249977907~8895909010</string>
+    <string name="ADMOB_NATIVE_AD_ID">ca-app-pub-8943333249977907/4996547676</string>
+    <string name="ADMOB_BANNER_AD_ID">ca-app-pub-8943333249977907/3707516730</string>
+    <string name="ADMOB_REWARD_AD_ID">ca-app-pub-8943333249977907/6078173987</string>
+    <string name="ADMOB_INTERS_AD_ID">ca-app-pub-8943333249977907/4090660118</string>
+
+    <string name="GOOGLE_API_KEY">AIzaSyDKMxmzGMMMqJKPp68isHDWDbQOWMF8BgM</string>
+    <string name="FIREBASE_STORAGE_ADDR">gs://midnight-pickle.appspot.com</string>
+    <string name="FIREBASE_DATABASE_ADDR">https://midnight-pickle.firebaseio.com/</string>
+
+    <string name="GOOGLE_BILLING_LICENSE_KEY">MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAg6pq7RI6LlEg3Yi7rHBt/vLeXyWmuKCY3hXw5NBG4wIE36YzSlLH9gmBCvajClY/8sUjgQ2Abk6kmgmPTbOLk1PQbGNz3wsDplgsBQnCH81Vww5yYsaBi5ruzZiJObl+91lhotVCRphQ/o3pTq1vUVUVoE2QnNd1sW+n9ECOXmN0W5ZRLN8PwzZvAYl4I9xrgbYtA83pFFNsj2knj3Rk1w5wEbtFcEkZteBGeS7LD53XAGdOb3jfmnzW42b45RiEqiPgkOlRSsPFzP+CaoczIhYLljA97ozXuQezRS7/dpxUah2Wpos9rad+N/a1kF+4EiS5igWAPTbb7TPrnhl2BwIDAQAB</string>
+
+    <string name="intro_logo_desc">Main Logo for intro activity</string>
+    <string name="MapKey">AIzaSyB-S-TT7LoYnSA87UP27uwsLN8wtO8Tv9o</string>
+    <string name="reg_msg">아직 회원이 아니신가요?</string>
+    <string name="share_using">이 페이지를 공유</string>
+    <string name="agreement">이용약관</string>
+
+    <string name="integralText">(필수) 내용을 입력하세요.</string>
+
+    <string name="intro_phrase_0">환영합니다! :)</string>
+    <string name="intro_phrase_1">나와 같은 관심사를 공유하세요</string>
+    <string name="intro_phrase_2">새로운 친구를 찾아보세요!</string>
+    <string name="intro_phrase_3">가까운 친구를 찾아보세요!</string>
+
+    <string name="phrase_select">성향을 알려주세요!</string>
+
+    <string name="lorem">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</string>
+
+    <string name="default_notification_channel_id">kr.co.picklecode.helper.helper.channel01</string>
+    <string name="readableChannelName">미드나잇 알림</string>
+
+    <string name="intro_skip">건너뛰기</string>
+    <string name="intro_done">완료</string>
+
+    <string name="msg_auth_failed">사용자 정보를 로드할 수 없습니다.</string>
+    <string name="msg_error">오류가 발생하였습니다.</string>
+    <string name="msg_login_failed">로그인에 실패하였습니다.</string>
+
+    <string name="facebook_app_id">575873932996879</string>
+    <string name="fb_login_protocol_scheme">fb575873932996879</string>
+
+    <string name="twitter_consumer_key">vRYqN1wFmr11HXXKzkEcczgv3</string>
+    <string name="twitter_consumer_secret">RwK6Q6mRiBtHM9DWHbQ3etd1tLXhLLkWZtF19iDd8oHv5A96Os</string>
+
 </resources>

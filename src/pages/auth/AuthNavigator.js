@@ -20,13 +20,11 @@ import JoinStep1 from 'pages/auth/JoinStep1'
 import JoinStep2 from 'pages/auth/JoinStep2'
 import JoinStep3 from 'pages/auth/JoinStep3'
 import GlobalStyle from 'styles/GlobalStyle'
-import {Constants} from 'react-native-unimodules'
 
 enableScreens()
 const Stack = createNativeStackNavigator()
 
 const AuthNavigator = () => {
-    console.log(Constants.systemFonts)
     const dispatch = useDispatch()
 
     useEffect(() => {
