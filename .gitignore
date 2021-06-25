@@ -1,4 +1,4 @@
-*.hpof
+*.hprof
 # OSX
 #
 .DS_Store
