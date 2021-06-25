@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		00E356F31AD99517003FC87E /* MidnightTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* MidnightTests.m */; };
 		1152F2D726845DC000EFF324 /* Expo.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1152F2D626845DC000EFF324 /* Expo.plist */; };
+		1192B4632685E5A600171B71 /* SplashScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1192B4622685E5A600171B71 /* SplashScreen.storyboard */; };
 		11D25E9F26784FE1005544AC /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D25E9E26784FE1005544AC /* File.swift */; };
 		13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
@@ -37,6 +38,7 @@
 		00E356F11AD99517003FC87E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		00E356F21AD99517003FC87E /* MidnightTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MidnightTests.m; sourceTree = "<group>"; };
 		1152F2D626845DC000EFF324 /* Expo.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Expo.plist; sourceTree = "<group>"; };
+		1192B4622685E5A600171B71 /* SplashScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SplashScreen.storyboard; sourceTree = "<group>"; };
 		11D25E9D26784FE0005544AC /* Midnight-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Midnight-Bridging-Header.h"; sourceTree = "<group>"; };
 		11D25E9E26784FE1005544AC /* File.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
 		13B07F961A680F5B00A75B9A /* Midnight.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Midnight.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -138,6 +140,7 @@
 				13B07FB71A68108700A75B9A /* main.m */,
 				11D25E9E26784FE1005544AC /* File.swift */,
 				11D25E9D26784FE0005544AC /* Midnight-Bridging-Header.h */,
+				1192B4622685E5A600171B71 /* SplashScreen.storyboard */,
 			);
 			name = Midnight;
 			sourceTree = "<group>";
@@ -279,6 +282,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
+				1192B4632685E5A600171B71 /* SplashScreen.storyboard in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 				CCD3CEF8592B433CA4C3EAEB /* jalnan.ttf in Resources */,
 				3701E0B0C6F64C62BA937A6D /* nsq.ttf in Resources */,
