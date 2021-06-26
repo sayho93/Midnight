@@ -1,4 +1,4 @@
-import React, {useEffect, useState, useMemo} from 'react'
+import React from 'react'
 import AuthNavigator from 'pages/auth/AuthNavigator'
 import {Provider} from 'react-redux'
 import {NavigationContainer} from '@react-navigation/native'
@@ -6,7 +6,7 @@ import Store from 'store/Store'
 import * as SplashScreen from 'expo-splash-screen'
 
 import AppLoading from 'expo-app-loading'
-import {Animated, View, StyleSheet, Image} from 'react-native'
+import {Platform, Animated, View, StyleSheet, Image} from 'react-native'
 import Constants from 'expo-constants'
 import splashImg from 'img/title_logo_small.png'
 
@@ -62,25 +62,23 @@ function AnimatedSplashScreen({children, image}) {
     React.useEffect(() => {
         if (isAppReady) {
             console.log('App Ready')
+            const time = Platform.OS === 'android' ? 0 : 2000
             setTimeout(() => {
                 Animated.timing(animation, {
                     toValue: 0,
                     duration: 200,
                     useNativeDriver: true,
                 }).start(() => setAnimationComplete(true))
-            }, 2000)
+            }, time)
         }
     }, [animation, isAppReady])
 
     const onImageLoaded = React.useMemo(
         () => async () => {
             try {
-                setTimeout(async () => {
-                    await SplashScreen.hideAsync()
+                await SplashScreen.hideAsync()
 
-                    await Promise.all([])
-                }, 2000)
-
+                await Promise.all([])
                 // Load stuff
 
             } catch (e) {

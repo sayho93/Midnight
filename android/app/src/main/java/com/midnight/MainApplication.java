@@ -20,9 +20,9 @@ import org.unimodules.adapters.react.ReactModuleRegistryProvider;
 import org.unimodules.core.interfaces.SingletonModule;
 import com.airbnb.android.react.lottie.LottiePackage;
 
-import android.net.Uri;
-import expo.modules.updates.UpdatesController;
-import javax.annotation.Nullable;
+//import android.net.Uri;
+//import expo.modules.updates.UpdatesController;
+//import javax.annotation.Nullable;
 
 public class MainApplication extends Application implements ReactApplication {
   private final ReactModuleRegistryProvider mModuleRegistryProvider = new ReactModuleRegistryProvider(new BasePackageList().getPackageList(), null);
@@ -53,23 +53,23 @@ public class MainApplication extends Application implements ReactApplication {
           return "index";
         }
 
-        @Override
-        protected @Nullable String getJSBundleFile() {
-          if (BuildConfig.DEBUG) {
-            return super.getJSBundleFile();
-          } else {
-            return UpdatesController.getInstance().getLaunchAssetFile();
-          }
-        }
+//        @Override
+//        protected @Nullable String getJSBundleFile() {
+//          if (BuildConfig.DEBUG) {
+//            return super.getJSBundleFile();
+//          } else {
+//            return UpdatesController.getInstance().getLaunchAssetFile();
+//          }
+//        }
 
-        @Override
-        protected @Nullable String getBundleAssetName() {
-          if (BuildConfig.DEBUG) {
-            return super.getBundleAssetName();
-          } else {
-            return UpdatesController.getInstance().getBundleAssetName();
-          }
-        }
+//        @Override
+//        protected @Nullable String getBundleAssetName() {
+//          if (BuildConfig.DEBUG) {
+//            return super.getBundleAssetName();
+//          } else {
+//            return UpdatesController.getInstance().getBundleAssetName();
+//          }
+//        }
       };
 
   @Override
@@ -82,9 +82,9 @@ public class MainApplication extends Application implements ReactApplication {
     super.onCreate();
     SoLoader.init(this, /* native exopackage */ false);
 
-    if (!BuildConfig.DEBUG) {
-          UpdatesController.initialize(this);
-    }
+//    if (!BuildConfig.DEBUG) {
+//          UpdatesController.initialize(this);
+//    }
 
     initializeFlipper(this, getReactNativeHost().getReactInstanceManager());
   }

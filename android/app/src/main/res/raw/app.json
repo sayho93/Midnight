@@ -1,0 +1,12 @@
+{
+  "name": "Midnight",
+  "displayName": "Midnight",
+  "expo": {
+    "name": "Midnight",
+    "slug": "Midnight",
+    "sdkVersion": "38.0.0",
+    "splash": {
+      "backgroundColor": "#243447"
+    }
+  }
+}

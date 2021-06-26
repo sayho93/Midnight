@@ -105,7 +105,8 @@ const EntryPoint = ({route, navigation}) => {
         <SafeAreaView style={GlobalStyle.background}>
             <StatusBar
                 backgroundColor={ValueConst.colors.themeColor}
-                barStyle={isDarkMode ? 'light-content' : 'dark-content'}
+                // barStyle={isDarkMode ? 'light-content' : 'dark-content'}
+                barStyle={'light-content'}
             />
             <KeyboardAvoidingView behavior={Platform.OS === 'ios' ? 'position' : 'position'}>
                 <View style={styles.logoLayout}>

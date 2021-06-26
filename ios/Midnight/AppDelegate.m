@@ -30,7 +30,7 @@ static void InitializeFlipper(UIApplication *application) {
 @interface AppDelegate () <RCTBridgeDelegate>
 
 @property (nonatomic, strong) UMModuleRegistryAdapter *moduleRegistryAdapter;
-@property (nonatomic, strong) NSDictionary *launchOptions;
+//@property (nonatomic, strong) NSDictionary *launchOptions;
 
 @end
 
@@ -48,30 +48,35 @@ static void InitializeFlipper(UIApplication *application) {
 //   RCTRootView *rootView = [[RCTRootView alloc] initWithBridge:bridge
 //                                                    moduleName:@"Midnight"
 //                                             initialProperties:nil];
-  self.launchOptions = launchOptions;
-  self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
-  #ifdef DEBUG
-    [self initializeReactNativeApp];
-  #else
-    EXUpdatesAppController *controller = [EXUpdatesAppController sharedInstance];
-    controller.delegate = self;
-    [controller startAndShowLaunchScreen:self.window];
-  #endif
+  
+//  self.launchOptions = launchOptions;
+//  self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
+//  #ifdef DEBUG
+//    [self initializeReactNativeApp];
+//  #else
+//    EXUpdatesAppController *controller = [EXUpdatesAppController sharedInstance];
+//    controller.delegate = self;
+//    [controller startAndShowLaunchScreen:self.window];
+//  #endif
 
-  [super application:application didFinishLaunchingWithOptions:launchOptions];
+//  [super application:application didFinishLaunchingWithOptions:launchOptions];
 
-  return YES;
-}
+//  return YES;
+//}
 
-- (RCTBridge *)initializeReactNativeApp
-{
-  RCTBridge *bridge = [[RCTBridge alloc] initWithDelegate:self launchOptions:self.launchOptions];
+//- (RCTBridge *)initializeReactNativeApp
+//{
+//  RCTBridge *bridge = [[RCTBridge alloc] initWithDelegate:self launchOptions:self.launchOptions];
+  RCTBridge *bridge = [[RCTBridge alloc] initWithDelegate:self launchOptions:launchOptions];
+  
   RCTRootView *rootView = [[RCTRootView alloc] initWithBridge:bridge moduleName:@"Midnight" initialProperties:nil];
 
   if (@available(iOS 13.0, *)) {
-      rootView.backgroundColor = [UIColor systemBackgroundColor];
+//      rootView.backgroundColor = [UIColor systemBackgroundColor];
+      rootView.backgroundColor = [UIColor colorWithRed:36.0/255.0 green:52.0/255.0 blue:71.0/255.0 alpha:1];
   } else {
-      rootView.backgroundColor = [UIColor whiteColor];
+//      rootView.backgroundColor = [UIColor whiteColor];
+      rootView.backgroundColor = [UIColor colorWithRed:36.0/255.0 green:52.0/255.0 blue:71.0/255.0 alpha:1];
   }
 
   self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
@@ -80,7 +85,9 @@ static void InitializeFlipper(UIApplication *application) {
   self.window.rootViewController = rootViewController;
   [self.window makeKeyAndVisible];
 //   return YES;
-  return bridge;
+//  return bridge;
+  [super application:application didFinishLaunchingWithOptions:launchOptions];
+  return YES;
 }
 
 - (NSArray<id<RCTBridgeModule>> *)extraModulesForBridge:(RCTBridge *)bridge
@@ -96,13 +103,14 @@ static void InitializeFlipper(UIApplication *application) {
   return [[RCTBundleURLProvider sharedSettings] jsBundleURLForBundleRoot:@"index" fallbackResource:nil];
 #else
 //   return [[NSBundle mainBundle] URLForResource:@"main" withExtension:@"jsbundle"];
-  return [[EXUpdatesAppController sharedInstance] launchAssetUrl];
+//  return [[EXUpdatesAppController sharedInstance] launchAssetUrl];
+  return [[NSBundle mainBundle] URLForResource:@"main" withExtension:@"jsbundle"];
 #endif
 }
 
-- (void)appController:(EXUpdatesAppController *)appController didStartWithSuccess:(BOOL)success
-{
-  appController.bridge = [self initializeReactNativeApp];
-}
+//- (void)appController:(EXUpdatesAppController *)appController didStartWithSuccess:(BOOL)success
+//{
+//  appController.bridge = [self initializeReactNativeApp];
+//}
 
 @end

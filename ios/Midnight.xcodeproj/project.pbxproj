@@ -16,7 +16,6 @@
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		3701E0B0C6F64C62BA937A6D /* nsq.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A33EFD99E9BF4989BB56E80C /* nsq.ttf */; };
 		47266A4C953A4B9E49FF0534 /* libPods-Midnight.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 817E927F6CC32FBF8D250482 /* libPods-Midnight.a */; };
-		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
 		85E0D58EF6F74ADBBCB7ECBA /* nsqb.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E65649CCC4A84E28AA6173B9 /* nsqb.ttf */; };
 		AC97422BA4A17FBA8525EF57 /* libPods-Midnight-MidnightTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A7742CA46B73D93BD08099F2 /* libPods-Midnight-MidnightTests.a */; };
 		B268D8EA52CD430E93EDC7D0 /* nsqr.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A231B706D00D43EB98D0ECE8 /* nsqr.ttf */; };
@@ -51,7 +50,6 @@
 		3D8D9378E635A90F3AE0818A /* Pods-Midnight.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Midnight.release.xcconfig"; path = "Target Support Files/Pods-Midnight/Pods-Midnight.release.xcconfig"; sourceTree = "<group>"; };
 		6B29C4B7C690483C976377AC /* jalnan.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = jalnan.ttf; path = ../assets/font/jalnan.ttf; sourceTree = "<group>"; };
 		817E927F6CC32FBF8D250482 /* libPods-Midnight.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Midnight.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = Midnight/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8B52786FF67D8BE22D686F9D /* Pods-Midnight-MidnightTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Midnight-MidnightTests.release.xcconfig"; path = "Target Support Files/Pods-Midnight-MidnightTests/Pods-Midnight-MidnightTests.release.xcconfig"; sourceTree = "<group>"; };
 		A0836DC6BA3C8B8DCAEE400C /* Pods-Midnight-MidnightTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Midnight-MidnightTests.debug.xcconfig"; path = "Target Support Files/Pods-Midnight-MidnightTests/Pods-Midnight-MidnightTests.debug.xcconfig"; sourceTree = "<group>"; };
 		A231B706D00D43EB98D0ECE8 /* nsqr.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = nsqr.ttf; path = ../assets/font/nsqr.ttf; sourceTree = "<group>"; };
@@ -136,7 +134,6 @@
 				13B07FB01A68108700A75B9A /* AppDelegate.m */,
 				13B07FB51A68108700A75B9A /* Images.xcassets */,
 				13B07FB61A68108700A75B9A /* Info.plist */,
-				81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */,
 				13B07FB71A68108700A75B9A /* main.m */,
 				11D25E9E26784FE1005544AC /* File.swift */,
 				11D25E9D26784FE0005544AC /* Midnight-Bridging-Header.h */,
@@ -281,7 +278,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
 				1192B4632685E5A600171B71 /* SplashScreen.storyboard in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 				CCD3CEF8592B433CA4C3EAEB /* jalnan.ttf in Resources */,
