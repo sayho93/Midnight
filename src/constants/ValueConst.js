@@ -20,6 +20,7 @@ const ValueConst = {
         menu_text: 15,
         default_refresh: 10,
         button_height: 40,
+        input_height: 35,
     },
     colors: {
         colorPrimary: '#243447',

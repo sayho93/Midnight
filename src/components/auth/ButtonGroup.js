@@ -19,12 +19,14 @@ export default class ButtonGroup extends Component {
                         onPress={this.props.onLoginPress}
                         color={ValueConst.colors.colorPrimaryDark}
                         textColor={ValueConst.colors.white}
+                        fontSize={ValueConst.dimensions.button_default}
                     />
                     <CustomButton
                         title="학교 이메일로 회원가입"
                         onPress={this.props.onJoinPress}
                         color={ValueConst.colors.white}
                         textColor={ValueConst.colors.colorPrimaryDark}
+                        fontSize={ValueConst.dimensions.button_default}
                     />
                     <Image style={styles.bottomLogo} source={bottomLogo} />
                 </View>

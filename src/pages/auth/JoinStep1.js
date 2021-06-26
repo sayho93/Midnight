@@ -1,5 +1,14 @@
 import React from 'react'
-import {Text, TouchableOpacity, View, StyleSheet, ScrollView, KeyboardAvoidingView, TextInput} from 'react-native'
+import {
+    Text,
+    TouchableOpacity,
+    View,
+    StyleSheet,
+    ScrollView,
+    KeyboardAvoidingView,
+    TextInput,
+    TouchableWithoutFeedback,
+} from 'react-native'
 import GlobalStyle from 'styles/GlobalStyle'
 import ValueConst from 'constants/ValueConst'
 import LottieView from 'lottie-react-native'
@@ -8,77 +17,77 @@ import CustomButton from '../../components/CustomButton'
 
 const JoinStep1 = ({navigation}) => {
     return (
-        <KeyboardAvoidingView behavior="position" style={GlobalStyle.background}>
-            <ScrollView style={styles.fullHeight}>
-                <View style={styles.layout}>
-                    <View style={styles.lottieContainer}>
-                        <LottieView
-                            source={signup}
-                            style={styles.lottie}
-                            autoPlay={true}
-                            loop={false}
-                            resizeMode="contain"
+        <View style={GlobalStyle.background}>
+            <ScrollView>
+                <KeyboardAvoidingView behavior="padding">
+                    <View style={styles.layout}>
+                        <View style={styles.lottieContainer}>
+                            <LottieView source={signup} autoPlay={true} loop={false} resizeMode="cover" />
+                        </View>
+                        <View style={styles.row}>
+                            <Text style={styles.label}>이메일</Text>
+                            <TextInput
+                                style={styles.input}
+                                placeholder="(필수) 내용을 입력하세요."
+                                autoCorrect={false}
+                                placeholderTextColor={ValueConst.colors.aluminum}
+                            />
+                        </View>
+                        <View style={styles.row}>
+                            <Text style={styles.label}>닉네임</Text>
+                            <TextInput
+                                style={[styles.input, {flex: 2.7}]}
+                                placeholder="(필수) 내용을 입력하세요."
+                                autoCorrect={false}
+                                placeholderTextColor={ValueConst.colors.aluminum}
+                            />
+                            <TouchableOpacity style={styles.confirmBtn}>
+                                <Text style={styles.conformBtnTitle}>중복 확인</Text>
+                            </TouchableOpacity>
+                        </View>
+                        <View style={styles.row}>
+                            <Text style={styles.label}>PW</Text>
+                            <TextInput
+                                style={styles.input}
+                                textContentType="password"
+                                placeholder="(필수) 내용을 입력하세요."
+                                secureTextEntry={true}
+                                autoCorrect={false}
+                                placeholderTextColor={ValueConst.colors.aluminum}
+                            />
+                        </View>
+                        <View style={styles.row}>
+                            <Text style={styles.label}>PW확인</Text>
+                            <TextInput
+                                style={styles.input}
+                                textContentType="password"
+                                placeholder="(필수) 내용을 입력하세요."
+                                secureTextEntry={true}
+                                autoCorrect={false}
+                                placeholderTextColor={ValueConst.colors.aluminum}
+                            />
+                        </View>
+                        <View style={styles.agreementsLayout}>
+                            <Text style={styles.agreements}>개인정보처리방침</Text>
+                            <Text style={styles.agreements}>사용자이용약관</Text>
+                        </View>
+                        <Text style={styles.guideText}>
+                            가입하기를 누르시면 개인정보처리방침과 사용자이용약관에 동의한 것으로 간주됩니다.
+                        </Text>
+                        <CustomButton
+                            title="인증 이메일 전송하기"
+                            onPress={() => navigation.navigate('JoinStep2', {count: 1})}
+                            color={ValueConst.colors.highlight}
+                            textColor={ValueConst.colors.white}
                         />
                     </View>
-                    <View style={styles.row}>
-                        <Text style={styles.label}>이메일</Text>
-                        <TextInput
-                            style={styles.input}
-                            placeholder="(필수) 내용을 입력하세요."
-                            autoCorrect={false}
-                            placeholderTextColor={ValueConst.colors.thisgray}
-                        />
-                    </View>
-                    <View style={styles.row}>
-                        <Text style={styles.label}>닉네임</Text>
-                        <TextInput
-                            style={[styles.input, {flex: 2.7}]}
-                            placeholder="(필수) 내용을 입력하세요."
-                            autoCorrect={false}
-                            placeholderTextColor={ValueConst.colors.thisgray}
-                        />
-                        <TouchableOpacity style={styles.confirmBtn}>
-                            <Text style={styles.title}>중복 확인</Text>
-                        </TouchableOpacity>
-                    </View>
-                    <View style={styles.row}>
-                        <Text style={styles.label}>PW</Text>
-                        <TextInput
-                            style={styles.input}
-                            textContentType="password"
-                            placeholder="(필수) 내용을 입력하세요."
-                            secureTextEntry={true}
-                            autoCorrect={false}
-                            placeholderTextColor={ValueConst.colors.thisgray}
-                        />
-                    </View>
-                    <View style={styles.row}>
-                        <Text style={styles.label}>PW확인</Text>
-                        <TextInput
-                            style={styles.input}
-                            textContentType="password"
-                            placeholder="(필수) 내용을 입력하세요."
-                            secureTextEntry={true}
-                            autoCorrect={false}
-                            placeholderTextColor={ValueConst.colors.thisgray}
-                        />
-                    </View>
-                    <CustomButton
-                        title="인증 이메일 전송하기"
-                        onPress={() => navigation.navigate('JoinStep2', {count: 1})}
-                        color={ValueConst.colors.highlight}
-                        textColor={ValueConst.colors.white}
-                    />
-                </View>
+                </KeyboardAvoidingView>
             </ScrollView>
-        </KeyboardAvoidingView>
+        </View>
     )
 }
 
 const styles = StyleSheet.create({
-    fullHeight: {
-        height: '100%',
-    },
     layout: {
         margin: 15,
         justifyContent: 'center',
@@ -91,13 +100,9 @@ const styles = StyleSheet.create({
         width: 120,
         height: 120,
     },
-    lottie: {
-        // width: 120,
-        // height: 120,
-    },
     row: {
         width: '100%',
-        marginBottom: 15,
+        marginBottom: 10,
         flexDirection: 'row',
         height: ValueConst.dimensions.button_height,
     },
@@ -110,10 +115,12 @@ const styles = StyleSheet.create({
     },
     input: {
         flex: 4,
-        height: ValueConst.dimensions.button_height,
+        height: ValueConst.dimensions.input_height,
         backgroundColor: ValueConst.colors.white,
         fontFamily: ValueConst.font.jalnan,
         fontSize: ValueConst.dimensions.font_size_default,
+        paddingVertical: 0,
+        paddingHorizontal: 10,
     },
     confirmBtn: {
         flex: 1.3,
@@ -121,12 +128,31 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'center',
         backgroundColor: ValueConst.colors.highlight,
-        height: ValueConst.dimensions.button_height,
+        height: ValueConst.dimensions.input_height,
     },
-    title: {
-        fontSize: ValueConst.dimensions.button_default,
+    conformBtnTitle: {
+        fontSize: ValueConst.dimensions.font_size_default,
         color: ValueConst.colors.white,
         fontFamily: ValueConst.font.jalnan,
+    },
+    agreementsLayout: {
+        flex: 1,
+        marginBottom: ValueConst.dimensions.list_margin,
+        flexDirection: 'row',
+    },
+    agreements: {
+        padding: 10,
+        flex: 1,
+        fontSize: ValueConst.dimensions.font_size_default,
+        fontFamily: ValueConst.font.jalnan,
+        textAlign: 'center',
+        color: ValueConst.colors.white,
+    },
+    guideText: {
+        color: ValueConst.colors.white,
+        fontSize: ValueConst.dimensions.font_size_default,
+        marginBottom: ValueConst.dimensions.list_margin,
+        fontFamily: ValueConst.font.nanumSquare,
     },
 })
 

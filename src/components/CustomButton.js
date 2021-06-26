@@ -19,7 +19,7 @@ export default class CustomButton extends Component {
                 height: ValueConst.dimensions.button_height,
             },
             title: {
-                fontSize: ValueConst.dimensions.button_default,
+                fontSize: this.props.fontSize ? this.props.fontSize : ValueConst.dimensions.font_size_default,
                 color: this.props.textColor,
                 fontFamily: ValueConst.font.jalnan,
             },

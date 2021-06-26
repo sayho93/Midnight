@@ -25,7 +25,7 @@ const InputGroupComponent = props => {
                         style={styles.input}
                         onChangeText={text => props.emailHandler(text)}
                         placeholder="이메일"
-                        placeholderTextColor={ValueConst.colors.thisgray}
+                        placeholderTextColor={ValueConst.colors.aluminum}
                     />
                     <TextInput
                         style={styles.input}
@@ -35,7 +35,7 @@ const InputGroupComponent = props => {
                         returnKeyType="go"
                         secureTextEntry={true}
                         autoCorrect={false}
-                        placeholderTextColor={ValueConst.colors.thisgray}
+                        placeholderTextColor={ValueConst.colors.aluminum}
                     />
                     <CustomButton
                         title="로그인"
@@ -87,11 +87,14 @@ const styles = StyleSheet.create({
     input: {
         marginTop: 2,
         marginBottom: 2,
-        height: ValueConst.dimensions.button_height,
+        height: ValueConst.dimensions.input_height,
         backgroundColor: ValueConst.colors.white,
         color: ValueConst.colors.colorPrimaryDark,
         fontFamily: ValueConst.font.jalnan,
+        fontSize: ValueConst.dimensions.font_size_default,
         width: '100%',
+        paddingVertical: 0,
+        paddingHorizontal: 10,
     },
     test: {
         marginTop: 2,
