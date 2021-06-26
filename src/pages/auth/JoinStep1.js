@@ -8,14 +8,22 @@ import {
     KeyboardAvoidingView,
     TextInput,
     Platform,
+    Alert,
 } from 'react-native'
 import GlobalStyle from 'styles/GlobalStyle'
 import ValueConst from 'constants/ValueConst'
 import LottieView from 'lottie-react-native'
 import signup from 'animations/signup.json'
-import CustomButton from '../../components/CustomButton'
+import CustomButton from 'components/CustomButton'
 
 const JoinStep1 = ({navigation}) => {
+    const animationRef = React.useRef()
+    React.useEffect(() => {
+        setTimeout(() => {
+            animationRef.current.play()
+        }, 500)
+    })
+
     return (
         <View style={GlobalStyle.background}>
             <ScrollView>
@@ -25,7 +33,13 @@ const JoinStep1 = ({navigation}) => {
                     keyboardVerticalOffset={100}>
                     <View style={styles.layout}>
                         <View style={styles.lottieContainer}>
-                            <LottieView source={signup} autoPlay={true} loop={false} resizeMode="cover" />
+                            <LottieView
+                                ref={animationRef}
+                                source={signup}
+                                autoPlay={false}
+                                loop={false}
+                                resizeMode="cover"
+                            />
                         </View>
                         <View style={styles.row}>
                             <Text style={styles.label}>이메일</Text>
@@ -71,8 +85,22 @@ const JoinStep1 = ({navigation}) => {
                             />
                         </View>
                         <View style={styles.agreementsLayout}>
-                            <Text style={styles.agreements}>개인정보처리방침</Text>
-                            <Text style={styles.agreements}>사용자이용약관</Text>
+                            <TouchableOpacity
+                                style={styles.agreements}
+                                onPress={() => {
+                                    Alert.alert('aa')
+                                }}>
+                                <Text style={styles.agreementsText}>개인정보처리방침</Text>
+                            </TouchableOpacity>
+
+                            <TouchableOpacity
+                                style={styles.agreements}
+                                onPress={() => {
+                                    Alert.alert('bb')
+                                }}>
+                                <Text style={styles.agreementsText}>사용자이용약관</Text>
+                            </TouchableOpacity>
+
                         </View>
                         <Text style={styles.guideText}>
                             가입하기를 누르시면 개인정보처리방침과 사용자이용약관에 동의한 것으로 간주됩니다.
@@ -146,6 +174,8 @@ const styles = StyleSheet.create({
     agreements: {
         padding: 10,
         flex: 1,
+    },
+    agreementsText: {
         fontSize: ValueConst.dimensions.font_size_default,
         fontFamily: ValueConst.font.jalnan,
         textAlign: 'center',
