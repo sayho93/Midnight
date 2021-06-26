@@ -6,9 +6,11 @@ import Store from 'store/Store'
 import * as SplashScreen from 'expo-splash-screen'
 
 import AppLoading from 'expo-app-loading'
-import {Platform, Animated, View, StyleSheet, Image} from 'react-native'
+import {Platform, Animated, View, StyleSheet, Image, SafeAreaView, StatusBar} from 'react-native'
 import Constants from 'expo-constants'
 import splashImg from 'img/title_logo_small.png'
+import GlobalStyle from './styles/GlobalStyle'
+import ValueConst from './constants/ValueConst'
 
 SplashScreen.preventAutoHideAsync().catch(() => {
     /* reloading the app might trigger some race conditions, ignore them */
@@ -18,9 +20,16 @@ const App = () => {
     return (
         <AnimatedAppLoader image={splashImg}>
             <Provider store={Store}>
-                <NavigationContainer>
-                    <AuthNavigator />
-                </NavigationContainer>
+                <SafeAreaView style={GlobalStyle.background}>
+                    <StatusBar
+                        backgroundColor={ValueConst.colors.themeColor}
+                        // barStyle={isDarkMode ? 'light-content' : 'dark-content'}
+                        barStyle={'light-content'}
+                    />
+                    <NavigationContainer>
+                        <AuthNavigator />
+                    </NavigationContainer>
+                </SafeAreaView>
             </Provider>
         </AnimatedAppLoader>
     )
@@ -80,7 +89,6 @@ function AnimatedSplashScreen({children, image}) {
 
                 await Promise.all([])
                 // Load stuff
-
             } catch (e) {
                 // handle errors
             } finally {

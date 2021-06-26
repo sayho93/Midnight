@@ -1,16 +1,7 @@
-/**
- * Sample React Native AuthNavigator
- * https://github.com/facebook/react-native
- *
- * @format
- * @flow strict-local
- */
 import 'react-native-gesture-handler'
 import React, {useState} from 'react'
 import {
     Platform,
-    SafeAreaView,
-    StatusBar,
     StyleSheet,
     Image,
     useColorScheme,
@@ -33,7 +24,6 @@ import AsyncStorage from '@react-native-async-storage/async-storage'
 import loveAnimation from 'animations/love-explosion.json'
 import logo from 'img/title_logo_small.png'
 import GlobalStyle from 'styles/GlobalStyle'
-import ValueConst from 'constants/ValueConst'
 
 const EntryPoint = ({route, navigation}) => {
     const [state, setToggleState] = useState({
@@ -102,20 +92,13 @@ const EntryPoint = ({route, navigation}) => {
     } else group = <ButtonGroup onLoginPress={toggleHandler} onJoinPress={onJoinPress} />
 
     return (
-        <SafeAreaView style={GlobalStyle.background}>
-            <StatusBar
-                backgroundColor={ValueConst.colors.themeColor}
-                // barStyle={isDarkMode ? 'light-content' : 'dark-content'}
-                barStyle={'light-content'}
-            />
-            <KeyboardAvoidingView behavior={Platform.OS === 'ios' ? 'position' : 'position'}>
-                <View style={styles.logoLayout}>
-                    <LottieView source={loveAnimation} style={styles.lottie} autoPlay loop />
-                    <Image style={styles.logo} source={logo} />
-                </View>
-                {group}
-            </KeyboardAvoidingView>
-        </SafeAreaView>
+        <KeyboardAvoidingView behavior={Platform.OS === 'ios' ? 'position' : 'position'} style={GlobalStyle.background}>
+            <View style={styles.logoLayout}>
+                <LottieView source={loveAnimation} style={styles.lottie} autoPlay loop />
+                <Image style={styles.logo} source={logo} />
+            </View>
+            {group}
+        </KeyboardAvoidingView>
     )
 }
 
