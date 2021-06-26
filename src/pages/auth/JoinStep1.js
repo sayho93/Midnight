@@ -11,7 +11,15 @@ const JoinStep1 = ({navigation}) => {
         <KeyboardAvoidingView behavior="position" style={GlobalStyle.background}>
             <ScrollView style={styles.fullHeight}>
                 <View style={styles.layout}>
-                    <LottieView source={signup} style={styles.lottie} autoPlay={true} loop={false} resizeMode="cover" />
+                    <View style={styles.lottieContainer}>
+                        <LottieView
+                            source={signup}
+                            style={styles.lottie}
+                            autoPlay={true}
+                            loop={false}
+                            resizeMode="contain"
+                        />
+                    </View>
                     <View style={styles.row}>
                         <Text style={styles.label}>이메일</Text>
                         <TextInput
@@ -24,18 +32,14 @@ const JoinStep1 = ({navigation}) => {
                     <View style={styles.row}>
                         <Text style={styles.label}>닉네임</Text>
                         <TextInput
-                            style={styles.input}
+                            style={[styles.input, {flex: 2.7}]}
                             placeholder="(필수) 내용을 입력하세요."
                             autoCorrect={false}
                             placeholderTextColor={ValueConst.colors.thisgray}
                         />
-                        <CustomButton
-                            title="로그인"
-                            // onPress={props.onLoginPress}
-                            color={ValueConst.colors.colorPrimaryDark}
-                            textColor={ValueConst.colors.white}
-                            style={styles.confirmBtn}
-                        />
+                        <TouchableOpacity style={styles.confirmBtn}>
+                            <Text style={styles.title}>중복 확인</Text>
+                        </TouchableOpacity>
                     </View>
                     <View style={styles.row}>
                         <Text style={styles.label}>PW</Text>
@@ -48,9 +52,23 @@ const JoinStep1 = ({navigation}) => {
                             placeholderTextColor={ValueConst.colors.thisgray}
                         />
                     </View>
-                    <TouchableOpacity onPress={() => navigation.navigate('JoinStep2', {count: 1})}>
-                        <Text>Detail Screen</Text>
-                    </TouchableOpacity>
+                    <View style={styles.row}>
+                        <Text style={styles.label}>PW확인</Text>
+                        <TextInput
+                            style={styles.input}
+                            textContentType="password"
+                            placeholder="(필수) 내용을 입력하세요."
+                            secureTextEntry={true}
+                            autoCorrect={false}
+                            placeholderTextColor={ValueConst.colors.thisgray}
+                        />
+                    </View>
+                    <CustomButton
+                        title="인증 이메일 전송하기"
+                        onPress={() => navigation.navigate('JoinStep2', {count: 1})}
+                        color={ValueConst.colors.highlight}
+                        textColor={ValueConst.colors.white}
+                    />
                 </View>
             </ScrollView>
         </KeyboardAvoidingView>
@@ -66,34 +84,49 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'center',
     },
-    lottie: {
-        flex: 1,
+    lottieContainer: {
         margin: 15,
+        justifyContent: 'center',
+        alignItems: 'center',
         width: 120,
         height: 120,
+    },
+    lottie: {
+        // width: 120,
+        // height: 120,
     },
     row: {
         width: '100%',
         marginBottom: 15,
         flexDirection: 'row',
-        // justifyContent: 'center',
+        height: ValueConst.dimensions.button_height,
     },
     label: {
+        paddingLeft: 5,
         color: ValueConst.colors.white,
         flex: 1,
         fontFamily: ValueConst.font.jalnan,
-        textAlignVertical: 'center',
-        // width: 70,
+        alignSelf: 'center',
     },
     input: {
         flex: 4,
+        height: ValueConst.dimensions.button_height,
         backgroundColor: ValueConst.colors.white,
         fontFamily: ValueConst.font.jalnan,
+        fontSize: ValueConst.dimensions.font_size_default,
     },
     confirmBtn: {
-        flex: 1,
-        color: ValueConst.colors.white,
+        flex: 1.3,
+        marginLeft: 5,
+        alignItems: 'center',
+        justifyContent: 'center',
         backgroundColor: ValueConst.colors.highlight,
+        height: ValueConst.dimensions.button_height,
+    },
+    title: {
+        fontSize: ValueConst.dimensions.button_default,
+        color: ValueConst.colors.white,
+        fontFamily: ValueConst.font.jalnan,
     },
 })
 
