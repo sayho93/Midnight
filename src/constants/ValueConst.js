@@ -88,9 +88,9 @@ const ValueConst = {
     },
     font: {
         jalnan: 'jalnan',
-        nanumSquare: 'nsq',
-        nanumSquareBold: 'nsqb',
-        nunumSqueareRegular: 'nsqr',
+        nanumSquare: 'NanumSquare',
+        nanumSquareBold: 'NanumSquareB',
+        nunumSqueareRegular: 'NanumSquareR',
     },
 }
 

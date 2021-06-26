@@ -42,12 +42,14 @@ const InputGroupComponent = props => {
                         onPress={props.onLoginPress}
                         color={ValueConst.colors.colorPrimaryDark}
                         textColor={ValueConst.colors.white}
+                        fontSize={ValueConst.dimensions.button_default}
                     />
                     <CustomButton
                         title="취소"
                         onPress={props.onCancelPress}
                         color={ValueConst.colors.themeColor}
                         textColor={ValueConst.colors.white}
+                        fontSize={ValueConst.dimensions.button_default}
                     />
                     <Text style={styles.test}>{props.user.id}</Text>
                     <Text style={styles.test}>{props.user.nickname}</Text>
@@ -73,12 +75,12 @@ const styles = StyleSheet.create({
         margin: 20,
         alignItems: 'center',
     },
-    bottomLogo: {
-        marginTop: 40,
-        marginBottom: 10,
-        width: 60,
-        height: 13,
-    },
+    // bottomLogo: {
+    //     marginTop: 40,
+    //     marginBottom: 10,
+    //     width: 60,
+    //     height: 13,
+    // },
     inputGroup: {
         width: '100%',
         padding: 20,

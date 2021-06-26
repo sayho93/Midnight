@@ -7,7 +7,7 @@ import {
     ScrollView,
     KeyboardAvoidingView,
     TextInput,
-    TouchableWithoutFeedback,
+    Platform,
 } from 'react-native'
 import GlobalStyle from 'styles/GlobalStyle'
 import ValueConst from 'constants/ValueConst'
@@ -19,7 +19,10 @@ const JoinStep1 = ({navigation}) => {
     return (
         <View style={GlobalStyle.background}>
             <ScrollView>
-                <KeyboardAvoidingView behavior="padding">
+                <KeyboardAvoidingView
+                    style={{flex: 1}}
+                    behavior={Platform.OS === 'ios' ? 'position' : 'padding'}
+                    keyboardVerticalOffset={100}>
                     <View style={styles.layout}>
                         <View style={styles.lottieContainer}>
                             <LottieView source={signup} autoPlay={true} loop={false} resizeMode="cover" />
