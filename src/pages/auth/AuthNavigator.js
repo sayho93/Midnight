@@ -48,37 +48,13 @@ const AuthNavigator = () => {
             <Stack.Screen
                 name="EntryPoint"
                 component={EntryPoint}
-                // initialParams={{itemId: 42}}
                 options={{headerShown: false}}
+                // initialParams={{itemId: 42}}
             />
-            <Stack.Screen
-                name="JoinStep1"
-                component={JoinStep1}
-                options={{
-                    title: '회원가입',
-                }}
-            />
-            <Stack.Screen
-                name="JoinStep2"
-                component={JoinStep2}
-                options={{
-                    title: '세부 정보',
-                }}
-            />
-            <Stack.Screen
-                name="JoinStep3"
-                component={JoinStep3}
-                options={{
-                    title: '관심사 선택',
-                }}
-            />
-            <Stack.Screen
-                name="JoinStep4"
-                component={JoinStep3}
-                options={{
-                    title: '테스트',
-                }}
-            />
+            <Stack.Screen name="JoinStep1" component={JoinStep1} options={{title: '회원가입'}} />
+            <Stack.Screen name="JoinStep2" component={JoinStep2} options={{title: '세부 정보'}} />
+            <Stack.Screen name="JoinStep3" component={JoinStep3} options={{title: '관심사 선택'}} />
+            <Stack.Screen name="JoinStep4" component={JoinStep3} options={{title: '테스트'}} />
         </Stack.Navigator>
     )
 }

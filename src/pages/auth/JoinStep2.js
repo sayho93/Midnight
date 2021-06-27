@@ -9,9 +9,7 @@ const JoinStep2 = ({route, navigation}) => {
             <TouchableOpacity onPress={() => navigation.popToTop('Home')} style={{backgroundColor: 'yellow', flex: 1}}>
                 <Text>Back</Text>
             </TouchableOpacity>
-            <TouchableOpacity
-                onPress={() => navigation.navigate('JoinStep3', {count: count + 1})}
-                style={{backgroundColor: 'blue', flex: 1}}>
+            <TouchableOpacity onPress={() => navigation.navigate('JoinStep3', {count: count + 1})} style={{backgroundColor: 'blue', flex: 1}}>
                 <Text>Detail {count}</Text>
             </TouchableOpacity>
         </View>

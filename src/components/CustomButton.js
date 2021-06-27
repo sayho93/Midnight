@@ -1,34 +1,30 @@
-import React, {Component} from 'react'
+import React from 'react'
 import {TouchableOpacity, Text, StyleSheet} from 'react-native'
 import ValueConst from 'constants/ValueConst'
 
-export default class CustomButton extends Component {
-    constructor(props) {
-        super(props)
-    }
+const CustomButton = props => {
+    const styles = StyleSheet.create({
+        button: {
+            width: '100%',
+            marginTop: 5,
+            marginBottom: 5,
+            alignItems: 'center',
+            justifyContent: 'center',
+            backgroundColor: props.color,
+            height: ValueConst.dimensions.button_height,
+        },
+        title: {
+            fontSize: props.fontSize ? props.fontSize : ValueConst.dimensions.font_size_default,
+            color: props.textColor,
+            fontFamily: ValueConst.font.jalnan,
+        },
+    })
 
-    render() {
-        const styles = StyleSheet.create({
-            button: {
-                width: '100%',
-                marginTop: 5,
-                marginBottom: 5,
-                alignItems: 'center',
-                justifyContent: 'center',
-                backgroundColor: this.props.color,
-                height: ValueConst.dimensions.button_height,
-            },
-            title: {
-                fontSize: this.props.fontSize ? this.props.fontSize : ValueConst.dimensions.font_size_default,
-                color: this.props.textColor,
-                fontFamily: ValueConst.font.jalnan,
-            },
-        })
-
-        return (
-            <TouchableOpacity style={styles.button} onPress={this.props.onPress}>
-                <Text style={styles.title}>{this.props.title}</Text>
-            </TouchableOpacity>
-        )
-    }
+    return (
+        <TouchableOpacity style={[styles.button, props.buttonAddStyle]} onPress={props.onPress}>
+            <Text style={styles.title}>{props.title}</Text>
+        </TouchableOpacity>
+    )
 }
+
+export default CustomButton

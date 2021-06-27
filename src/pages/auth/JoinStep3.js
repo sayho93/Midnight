@@ -1,9 +1,9 @@
-import React, {useEffect} from 'react'
+import React from 'react'
 import {Text, TouchableOpacity, View, StyleSheet} from 'react-native'
 import GlobalStyle from 'styles/GlobalStyle'
 import ValueConst from 'constants/ValueConst'
 
-const JoinStep3 = ({route, navigation}) => {
+const JoinStep3 = ({navigation}) => {
     // useEffect(() => {
     //     navigation.setOptions({title: '관심사 선택'})
     // }, [navigation])
@@ -20,6 +20,7 @@ const JoinStep3 = ({route, navigation}) => {
     )
 }
 
+// eslint-disable-next-line no-unused-vars
 const styles = StyleSheet.create({
     // eslint-disable-next-line react-native/no-unused-styles
     test: {

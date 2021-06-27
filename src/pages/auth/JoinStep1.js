@@ -1,19 +1,10 @@
 import React from 'react'
-import {
-    Text,
-    TouchableOpacity,
-    View,
-    StyleSheet,
-    ScrollView,
-    KeyboardAvoidingView,
-    TextInput,
-    Platform,
-    Alert,
-} from 'react-native'
+import {Text, TouchableOpacity, View, StyleSheet, ScrollView, KeyboardAvoidingView, Platform, Alert} from 'react-native'
 import GlobalStyle from 'styles/GlobalStyle'
 import ValueConst from 'constants/ValueConst'
 import LottieView from 'lottie-react-native'
 import signup from 'animations/signup.json'
+import LabeledTextInput from 'components/auth/LabeledTextInput'
 import CustomButton from 'components/CustomButton'
 
 const JoinStep1 = ({navigation}) => {
@@ -24,90 +15,71 @@ const JoinStep1 = ({navigation}) => {
         }, 500)
     })
 
+    const [inputs, setInputs] = React.useState({
+        email: '',
+        nickname: '',
+        pw: '',
+        pwc: '',
+    })
+
+    //extract values from state
+    const {email, nickname, pw, pwc} = inputs
+
+    const onChange = (name, text) => {
+        console.log(name)
+        console.log(text)
+        setInputs({
+            ...inputs,
+            [name]: text,
+        })
+    }
+
+    const onNextPress = () => {
+        console.log(inputs)
+        // navigation.navigate('JoinStep2', {count: 1})
+    }
+
     return (
         <View style={GlobalStyle.background}>
             <ScrollView>
-                <KeyboardAvoidingView
-                    style={{flex: 1}}
-                    behavior={Platform.OS === 'ios' ? 'position' : 'padding'}
-                    keyboardVerticalOffset={100}>
+                <KeyboardAvoidingView style={{flex: 1}} behavior={Platform.OS === 'ios' ? 'position' : 'padding'} keyboardVerticalOffset={100}>
                     <View style={styles.layout}>
                         <View style={styles.lottieContainer}>
-                            <LottieView
-                                ref={animationRef}
-                                source={signup}
-                                autoPlay={false}
-                                loop={false}
-                                resizeMode="cover"
-                            />
+                            <LottieView ref={animationRef} source={signup} autoPlay={false} loop={false} resizeMode="cover" />
                         </View>
-                        <View style={styles.row}>
-                            <Text style={styles.label}>이메일</Text>
-                            <TextInput
-                                style={styles.input}
-                                placeholder="(필수) 내용을 입력하세요."
-                                autoCorrect={false}
-                                placeholderTextColor={ValueConst.colors.aluminum}
-                            />
-                        </View>
-                        <View style={styles.row}>
-                            <Text style={styles.label}>닉네임</Text>
-                            <TextInput
-                                style={[styles.input, {flex: 2.7}]}
-                                placeholder="(필수) 내용을 입력하세요."
-                                autoCorrect={false}
-                                placeholderTextColor={ValueConst.colors.aluminum}
-                            />
-                            <TouchableOpacity style={styles.confirmBtn}>
-                                <Text style={styles.conformBtnTitle}>중복 확인</Text>
-                            </TouchableOpacity>
-                        </View>
-                        <View style={styles.row}>
-                            <Text style={styles.label}>PW</Text>
-                            <TextInput
-                                style={styles.input}
-                                textContentType="password"
-                                placeholder="(필수) 내용을 입력하세요."
-                                secureTextEntry={true}
-                                autoCorrect={false}
-                                placeholderTextColor={ValueConst.colors.aluminum}
-                            />
-                        </View>
-                        <View style={styles.row}>
-                            <Text style={styles.label}>PW확인</Text>
-                            <TextInput
-                                style={styles.input}
-                                textContentType="password"
-                                placeholder="(필수) 내용을 입력하세요."
-                                secureTextEntry={true}
-                                autoCorrect={false}
-                                placeholderTextColor={ValueConst.colors.aluminum}
-                            />
-                        </View>
+                        <LabeledTextInput name="email" onChange={onChange} labelText="이메일" />
+                        <LabeledTextInput
+                            name="nickname"
+                            onChange={onChange}
+                            labelText="닉네임"
+                            addInputStyle={{flex: 2.7}}
+                            addComponent={
+                                <TouchableOpacity style={styles.confirmBtn}>
+                                    <Text style={styles.conformBtnTitle}>중복 확인</Text>
+                                </TouchableOpacity>
+                            }
+                        />
+                        <LabeledTextInput name="pw" onChange={onChange} labelText="PW" isPw={true} />
+                        <LabeledTextInput name="pwc" onChange={onChange} labelText="PW확인" isPw={true} />
+
                         <View style={styles.agreementsLayout}>
-                            <TouchableOpacity
-                                style={styles.agreements}
-                                onPress={() => {
-                                    Alert.alert('aa')
-                                }}>
-                                <Text style={styles.agreementsText}>개인정보처리방침</Text>
-                            </TouchableOpacity>
-
-                            <TouchableOpacity
-                                style={styles.agreements}
-                                onPress={() => {
-                                    Alert.alert('bb')
-                                }}>
-                                <Text style={styles.agreementsText}>사용자이용약관</Text>
-                            </TouchableOpacity>
-
+                            <CustomButton
+                                buttonAddStyle={styles.agreements}
+                                textColor={ValueConst.colors.white}
+                                title="개인정보처리방침"
+                                onPress={() => Alert.alert('aa')}
+                            />
+                            <CustomButton
+                                buttonAddStyle={styles.agreements}
+                                textColor={ValueConst.colors.white}
+                                title="사용자이용약관"
+                                onPress={() => Alert.alert('bb')}
+                            />
                         </View>
-                        <Text style={styles.guideText}>
-                            가입하기를 누르시면 개인정보처리방침과 사용자이용약관에 동의한 것으로 간주됩니다.
-                        </Text>
+                        <Text style={styles.guideText}>가입하기를 누르시면 개인정보처리방침과 사용자이용약관에 동의한 것으로 간주됩니다.</Text>
                         <CustomButton
                             title="인증 이메일 전송하기"
-                            onPress={() => navigation.navigate('JoinStep2', {count: 1})}
+                            onPress={onNextPress}
                             color={ValueConst.colors.highlight}
                             textColor={ValueConst.colors.white}
                         />
@@ -131,28 +103,6 @@ const styles = StyleSheet.create({
         width: 120,
         height: 120,
     },
-    row: {
-        width: '100%',
-        marginBottom: 10,
-        flexDirection: 'row',
-        height: ValueConst.dimensions.button_height,
-    },
-    label: {
-        paddingLeft: 5,
-        color: ValueConst.colors.white,
-        flex: 1,
-        fontFamily: ValueConst.font.jalnan,
-        alignSelf: 'center',
-    },
-    input: {
-        flex: 4,
-        height: ValueConst.dimensions.input_height,
-        backgroundColor: ValueConst.colors.white,
-        fontFamily: ValueConst.font.jalnan,
-        fontSize: ValueConst.dimensions.font_size_default,
-        paddingVertical: 0,
-        paddingHorizontal: 10,
-    },
     confirmBtn: {
         flex: 1.3,
         marginLeft: 5,
@@ -174,12 +124,6 @@ const styles = StyleSheet.create({
     agreements: {
         padding: 10,
         flex: 1,
-    },
-    agreementsText: {
-        fontSize: ValueConst.dimensions.font_size_default,
-        fontFamily: ValueConst.font.jalnan,
-        textAlign: 'center',
-        color: ValueConst.colors.white,
     },
     guideText: {
         color: ValueConst.colors.white,
