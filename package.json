@@ -38,6 +38,7 @@
     "react-native-screens": "^3.3.0",
     "react-native-tab-view": "^3.0.1",
     "react-native-unimodules": "^0.13.3",
+    "react-native-vector-icons": "^8.1.0",
     "react-redux": "^7.2.4",
     "react-spring": "^9.2.3",
     "redux": "^4.1.0",
