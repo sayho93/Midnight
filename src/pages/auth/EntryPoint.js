@@ -37,8 +37,6 @@ const EntryPoint = ({route, navigation}) => {
 
     const dispatch = useDispatch()
 
-    const isDarkMode = useColorScheme() === 'dark'
-
     const toggleHandler = () => {
         setToggleState({
             toggle: !state.toggle,
@@ -80,16 +78,8 @@ const EntryPoint = ({route, navigation}) => {
     }
 
     let group
-    if (state.toggle) {
-        group = (
-            <InputGroup
-                onLoginPress={onLoginPress}
-                onCancelPress={onCancelPress}
-                emailHandler={emailHandler}
-                pwHandler={pwHandler}
-            />
-        )
-    } else group = <ButtonGroup onLoginPress={toggleHandler} onJoinPress={onJoinPress} />
+    if (state.toggle) group = <InputGroup onLoginPress={onLoginPress} onCancelPress={onCancelPress} emailHandler={emailHandler} pwHandler={pwHandler} />
+    else group = <ButtonGroup onLoginPress={toggleHandler} onJoinPress={onJoinPress} />
 
     return (
         <KeyboardAvoidingView behavior={Platform.OS === 'ios' ? 'position' : 'position'} style={GlobalStyle.background}>

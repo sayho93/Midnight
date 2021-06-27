@@ -6,7 +6,7 @@ import Store from 'store/Store'
 import * as SplashScreen from 'expo-splash-screen'
 
 import AppLoading from 'expo-app-loading'
-import {Platform, Animated, View, StyleSheet, Image, SafeAreaView, StatusBar} from 'react-native'
+import {Platform, Animated, View, StyleSheet, Image, SafeAreaView, StatusBar, useColorScheme} from 'react-native'
 import Constants from 'expo-constants'
 import splashImg from 'img/title_logo_small.png'
 import GlobalStyle from './styles/GlobalStyle'
@@ -17,6 +17,7 @@ SplashScreen.preventAutoHideAsync().catch(() => {
 })
 
 const App = () => {
+    const isDarkMode = useColorScheme() === 'dark'
     return (
         <AnimatedAppLoader image={splashImg}>
             <Provider store={Store}>
