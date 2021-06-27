@@ -4,13 +4,15 @@ import React from 'react'
 
 const LabeledTextInput = props => {
     return (
-        <View style={styles.row}>
+        <View style={[styles.row, props.rowAddStyle]}>
             <Text style={styles.label}>{props.labelText}</Text>
             <TextInput
                 style={[styles.input, props.addInputStyle]}
                 placeholder={props.placeholder ? props.placeholder : '(필수) 내용을 입력하세요.'}
                 autoCorrect={false}
                 placeholderTextColor={ValueConst.colors.aluminum}
+                multiline={props.multiline}
+                numberofLines={props.lines}
                 // textContentType={props.isPw ? 'password' : 'text'}
                 secureTextEntry={!!props.isPw}
                 onChangeText={text => props.onChange(props.name, text)}

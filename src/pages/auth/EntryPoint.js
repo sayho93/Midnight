@@ -1,15 +1,6 @@
 import 'react-native-gesture-handler'
 import React, {useState} from 'react'
-import {
-    Platform,
-    StyleSheet,
-    Image,
-    useColorScheme,
-    View,
-    Alert,
-    ToastAndroid,
-    KeyboardAvoidingView,
-} from 'react-native'
+import {Platform, StyleSheet, Image, View, Alert, ToastAndroid, KeyboardAvoidingView} from 'react-native'
 
 import NetUtil from 'api/NetUtil'
 import LottieView from 'lottie-react-native'
@@ -78,7 +69,8 @@ const EntryPoint = ({route, navigation}) => {
     }
 
     let group
-    if (state.toggle) group = <InputGroup onLoginPress={onLoginPress} onCancelPress={onCancelPress} emailHandler={emailHandler} pwHandler={pwHandler} />
+    if (state.toggle)
+        group = <InputGroup onLoginPress={onLoginPress} onCancelPress={onCancelPress} emailHandler={emailHandler} pwHandler={pwHandler} />
     else group = <ButtonGroup onLoginPress={toggleHandler} onJoinPress={onJoinPress} />
 
     return (

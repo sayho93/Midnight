@@ -36,7 +36,7 @@ const JoinStep1 = ({navigation}) => {
 
     const onNextPress = () => {
         console.log(inputs)
-        // navigation.navigate('JoinStep2', {count: 1})
+        navigation.navigate('JoinStep2', {count: 1})
     }
 
     return (
@@ -92,12 +92,12 @@ const JoinStep1 = ({navigation}) => {
 
 const styles = StyleSheet.create({
     layout: {
-        margin: 15,
+        margin: ValueConst.dimensions.list_margin,
         justifyContent: 'center',
         alignItems: 'center',
     },
     lottieContainer: {
-        margin: 15,
+        margin: ValueConst.dimensions.list_margin,
         justifyContent: 'center',
         alignItems: 'center',
         width: 120,
