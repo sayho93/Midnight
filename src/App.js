@@ -72,7 +72,7 @@ function AnimatedSplashScreen({children, image}) {
     React.useEffect(() => {
         if (isAppReady) {
             console.log('App Ready')
-            const time = Platform.OS === 'android' ? 0 : 2000
+            const time = Platform.OS === 'android' ? 2000 : 2000
             setTimeout(() => {
                 Animated.timing(animation, {
                     toValue: 0,

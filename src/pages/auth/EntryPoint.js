@@ -47,19 +47,20 @@ const EntryPoint = ({route, navigation}) => {
     }
 
     const onLoginPress = async () => {
-        await NetUtil.login(loginInfo.email, loginInfo.pw).then(async res => {
-            if (res.returnCode !== 1) {
-                if (Platform.OS === 'android') ToastAndroid.show(res.returnMessage, ToastAndroid.SHORT)
-                else Alert.alert(res.returnMessage)
-            } else {
-                //-------TEST
-                dispatch(UserSlice.actions.setUser(res.data))
-                //-------TEST
-                if (Platform.OS === 'android') ToastAndroid.show(res.returnMessage, ToastAndroid.SHORT)
-                else Alert.alert(res.returnMessage)
-            }
-            await AsyncStorage.setItem('user', JSON.stringify(res.data))
-        })
+        // await NetUtil.login(loginInfo.email, loginInfo.pw).then(async res => {
+        //     if (res.returnCode !== 1) {
+        //         if (Platform.OS === 'android') ToastAndroid.show(res.returnMessage, ToastAndroid.SHORT)
+        //         else Alert.alert(res.returnMessage)
+        //     } else {
+        //         //-------TEST
+        //         dispatch(UserSlice.actions.setUser(res.data))
+        //         //-------TEST
+        //         if (Platform.OS === 'android') ToastAndroid.show(res.returnMessage, ToastAndroid.SHORT)
+        //         else Alert.alert(res.returnMessage)
+        //     }
+        //     await AsyncStorage.setItem('user', JSON.stringify(res.data))
+        // })
+        navigation.navigate('Main')
     }
 
     const onCancelPress = () => {

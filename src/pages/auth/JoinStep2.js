@@ -25,6 +25,7 @@ const JoinStep2 = ({route, navigation}) => {
                     <View style={styles.layout}>
                         <View style={styles.imgContainer}>
                             <Image style={styles.img} source={imgProfile} />
+                            <Text style={styles.imgLabel}>프로필 사진</Text>
                         </View>
                         <LabeledTextInput name="age" onChange={onChange} labelText="나이" />
                         <LabeledTextInput
@@ -87,6 +88,10 @@ const styles = StyleSheet.create({
         resizeMode: 'cover',
         width: 90,
         height: 90,
+    },
+    imgLabel: {
+        color: ValueConst.colors.white,
+        fontFamily: ValueConst.font.jalnan,
     },
     textArea: {
         height: 200,
