@@ -5,7 +5,7 @@ import GlobalStyle from 'styles/GlobalStyle'
 const Place = ({navigation}) => {
     return (
         <View style={GlobalStyle.background}>
-            <Text>asd</Text>
+            <Text>Place</Text>
         </View>
     )
 }

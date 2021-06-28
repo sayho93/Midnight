@@ -5,7 +5,7 @@ import GlobalStyle from 'styles/GlobalStyle'
 const Feed = ({navigation}) => {
     return (
         <View style={GlobalStyle.background}>
-            <Text>asd</Text>
+            <Text>Feed</Text>
         </View>
     )
 }

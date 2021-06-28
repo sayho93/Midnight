@@ -5,7 +5,7 @@ import GlobalStyle from 'styles/GlobalStyle'
 const Map = ({navigation}) => {
     return (
         <View style={GlobalStyle.background}>
-            <Text>asd</Text>
+            <Text>Map</Text>
         </View>
     )
 }

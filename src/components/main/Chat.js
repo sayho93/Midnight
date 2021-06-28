@@ -5,7 +5,7 @@ import GlobalStyle from 'styles/GlobalStyle'
 const Chat = ({navigation}) => {
     return (
         <View style={GlobalStyle.background}>
-            <Text>asd</Text>
+            <Text>Chat</Text>
         </View>
     )
 }
