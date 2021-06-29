@@ -1,6 +1,7 @@
 import 'react-native-gesture-handler'
 import React, {useState} from 'react'
-import {Platform, StyleSheet, Image, View, Alert, ToastAndroid, KeyboardAvoidingView} from 'react-native'
+import {Platform, StyleSheet, Image, View, KeyboardAvoidingView} from 'react-native'
+import {SafeAreaView} from 'react-native-safe-area-context'
 
 import NetUtil from 'api/NetUtil'
 import LottieView from 'lottie-react-native'
@@ -75,13 +76,15 @@ const EntryPoint = ({route, navigation}) => {
     else group = <ButtonGroup onLoginPress={toggleHandler} onJoinPress={onJoinPress} />
 
     return (
-        <KeyboardAvoidingView behavior={Platform.OS === 'ios' ? 'position' : 'position'} style={GlobalStyle.background}>
-            <View style={styles.logoLayout}>
-                <LottieView source={loveAnimation} style={styles.lottie} autoPlay loop />
-                <Image style={styles.logo} source={logo} />
-            </View>
-            {group}
-        </KeyboardAvoidingView>
+        <SafeAreaView style={GlobalStyle.background}>
+            <KeyboardAvoidingView behavior={Platform.OS === 'ios' ? 'position' : 'position'} style={GlobalStyle.background}>
+                <View style={styles.logoLayout}>
+                    <LottieView source={loveAnimation} style={styles.lottie} autoPlay loop />
+                    <Image style={styles.logo} source={logo} />
+                </View>
+                {group}
+            </KeyboardAvoidingView>
+        </SafeAreaView>
     )
 }
 

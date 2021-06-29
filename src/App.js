@@ -9,7 +9,7 @@ import AppLoading from 'expo-app-loading'
 import {Platform, Animated, View, StyleSheet, Image, StatusBar, SafeAreaView, useColorScheme} from 'react-native'
 import Constants from 'expo-constants'
 import splashImg from 'img/title_logo_small.png'
-import GlobalStyle from './styles/GlobalStyle'
+import {SafeAreaProvider} from 'react-native-safe-area-context'
 import ValueConst from './constants/ValueConst'
 
 SplashScreen.preventAutoHideAsync().catch(() => {
@@ -19,18 +19,20 @@ SplashScreen.preventAutoHideAsync().catch(() => {
 const App = () => {
     const isDarkMode = useColorScheme() === 'dark'
     return (
-        <AnimatedAppLoader image={splashImg}>
-            <Provider store={Store}>
-                <StatusBar
-                    backgroundColor={ValueConst.colors.themeColor}
-                    // barStyle={isDarkMode ? 'light-content' : 'dark-content'}
-                    barStyle={'light-content'}
-                />
-                <NavigationContainer>
-                    <AuthNavigator />
-                </NavigationContainer>
-            </Provider>
-        </AnimatedAppLoader>
+        <SafeAreaProvider>
+            <AnimatedAppLoader image={splashImg}>
+                <Provider store={Store}>
+                    <StatusBar
+                        backgroundColor={ValueConst.colors.themeColor}
+                        // barStyle={isDarkMode ? 'light-content' : 'dark-content'}
+                        barStyle={'light-content'}
+                    />
+                    <NavigationContainer>
+                        <AuthNavigator />
+                    </NavigationContainer>
+                </Provider>
+            </AnimatedAppLoader>
+        </SafeAreaProvider>
     )
 }
 
