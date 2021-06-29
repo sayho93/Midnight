@@ -13,11 +13,8 @@ function MyTabBar({state, descriptors, navigation, position}) {
         <View style={{flexDirection: 'row'}}>
             {state.routes.map((route, index) => {
                 const {options} = descriptors[route.key]
-                console.log(options)
                 const label = options.tabBarLabel !== undefined ? options.tabBarLabel : options.title !== undefined ? options.title : route.name
-
                 const isFocused = state.index === index
-
                 let tempIcon
                 switch (index) {
                     case 0:
@@ -73,6 +70,7 @@ function MyTabBar({state, descriptors, navigation, position}) {
                         <Image
                             source={tempIcon}
                             style={[styles.ImageIconStyle, {tintColor: isFocused ? ValueConst.colors.highlight : ValueConst.colors.white}]}
+                            accessibilityLabel={label}
                         />
                     </TouchableOpacity>
                 )

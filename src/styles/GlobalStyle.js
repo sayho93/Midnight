@@ -18,6 +18,11 @@ const GlobalStyle = StyleSheet.create({
         fontFamily: ValueConst.font.jalnan,
         fontSize: ValueConst.dimensions.font_size_default,
     },
+    textStyle: {
+        fontFamily: ValueConst.font.jalnan,
+        fontSize: ValueConst.dimensions.font_size_default,
+        color: ValueConst.colors.white,
+    },
 })
 
 export default GlobalStyle

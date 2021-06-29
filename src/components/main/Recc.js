@@ -5,7 +5,7 @@ import GlobalStyle from 'styles/GlobalStyle'
 const Recc = ({navigation}) => {
     return (
         <View style={GlobalStyle.background}>
-            <Text>Recc</Text>
+            <Text style={GlobalStyle.textStyle}>Recc</Text>
         </View>
     )
 }
