@@ -23,7 +23,7 @@ const ValueConst = {
         input_height: 35,
     },
     colors: {
-        colorPrimary: '#1B2736',
+        colorPrimary: '#1E2B3B',
         colorPrimaryDark: '#262626',
         colorPrimaryMid: '#141d26',
         colorPrimaryAccent: '#1E2C3C',

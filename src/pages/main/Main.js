@@ -1,16 +1,23 @@
 import React from 'react'
-import {StyleSheet, Text, View} from 'react-native'
-import TabNavigator from './TabNavigator'
+import {createMaterialTopTabNavigator} from '@react-navigation/material-top-tabs'
 import GlobalStyle from 'styles/GlobalStyle'
+import {StyleSheet, Text, View} from 'react-native'
+import DrawerNavigator from 'components/main/DrawerNavigator'
 import ValueConst from 'constants/ValueConst'
 
-const TabView = props => {
+const Main = props => {
+    React.useEffect(() => {
+        props.navigation.addListener('beforeRemove', event => {
+            event.preventDefault()
+        })
+    }, [props.navigation])
+
     return (
         <View style={GlobalStyle.background}>
             <View style={styles.headerBar}>
                 <Text style={GlobalStyle.textStyle}>Header Bar</Text>
             </View>
-            <TabNavigator />
+            <DrawerNavigator />
         </View>
     )
 }
@@ -24,4 +31,4 @@ const styles = StyleSheet.create({
     },
 })
 
-export default TabView
+export default Main
