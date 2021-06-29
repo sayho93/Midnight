@@ -2,7 +2,7 @@
     <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <item name="android:windowBackground">@drawable/splashscreen</item> <!-- this line instructs the system to use 'splashscreen.xml' as a background of the whole application -->
         <item name="android:statusBarColor">@color/splashscreen_statusbar_color</item>
-
+        <item name="android:navigationBarColor">@color/splashscreen_statusbar_color</item>
 <!--        <item name="android:windowFullscreen">true</item>-->
 <!--        <item name="android:windowActionBar">false</item>-->
 <!--        <item name="android:windowNoTitle">true</item>-->

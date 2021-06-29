@@ -1,6 +1,7 @@
 package com.midnight;
 
 import android.os.Bundle;
+import android.view.View;
 import android.view.WindowManager;
 
 import expo.modules.splashscreen.singletons.SplashScreen;

@@ -28,8 +28,9 @@ const DrawerNavigator = ({navigation}) => {
                 initialRouteName="TabView"
                 backBehavior="none"
                 edgeWidth={Platform.OS === 'android' ? 50 : 100}
-                drawerStyle={styles.drawerStyle}>
-                <Drawer.Screen name="TabView" component={TabView} />
+                drawerStyle={styles.drawerStyle}
+                overlayColor="transparent">
+                <Drawer.Screen name="TabView" children={props => <TabView navigation={props.navigation} />} />
             </Drawer.Navigator>
         </SafeAreaView>
     )
@@ -37,7 +38,10 @@ const DrawerNavigator = ({navigation}) => {
 
 const styles = StyleSheet.create({
     drawerStyle: {
-        backgroundColor: ValueConst.colors.white,
+        backgroundColor: ValueConst.colors.colorPrimary,
+        // backgroundColor: 'transparent',
+        // borderRight: 1,
+        borderColor: ValueConst.colors.colorPrimary,
     },
 })
 
