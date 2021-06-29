@@ -1,8 +1,6 @@
 package com.midnight;
 
 import android.os.Bundle;
-import android.view.View;
-import android.view.WindowManager;
 
 import expo.modules.splashscreen.singletons.SplashScreen;
 import expo.modules.splashscreen.SplashScreenImageResizeMode;
@@ -15,7 +13,8 @@ public class MainActivity extends ReactActivity {
   @Override
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
-//    getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
+//    Window w = getWindow();
+//    w.setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS, WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
     SplashScreen.show(this, SplashScreenImageResizeMode.NATIVE, ReactRootView.class, false);
   }
 

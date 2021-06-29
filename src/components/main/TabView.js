@@ -3,7 +3,7 @@ import {Image, StyleSheet, View} from 'react-native'
 import TabNavigator from './TabNavigator'
 import GlobalStyle from 'styles/GlobalStyle'
 import ValueConst from 'constants/ValueConst'
-import {useSafeAreaInsets} from 'react-native-safe-area-context'
+import {useSafeAreaInsets, SafeAreaView} from 'react-native-safe-area-context'
 import Icon from 'react-native-vector-icons/dist/FontAwesome'
 import Alert from 'img/alert_icon.png'
 import Logo from 'img/title_logo_small.png'
@@ -11,7 +11,7 @@ import Logo from 'img/title_logo_small.png'
 const TabView = props => {
     const insets = useSafeAreaInsets()
     return (
-        <View style={[GlobalStyle.background, {paddingBottom: insets.bottom}]}>
+        <SafeAreaView style={GlobalStyle.background}>
             <View style={styles.headerBar}>
                 <Icon
                     name="bars"
@@ -26,7 +26,7 @@ const TabView = props => {
                 <Image source={Alert} style={styles.rightIcon} />
             </View>
             <TabNavigator />
-        </View>
+        </SafeAreaView>
     )
 }
 
