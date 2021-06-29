@@ -30,7 +30,7 @@ const DrawerNavigator = ({navigation}) => {
                 edgeWidth={Platform.OS === 'android' ? 50 : 100}
                 drawerStyle={styles.drawerStyle}
                 overlayColor="transparent">
-                <Drawer.Screen name="TabView" component={TabView} />
+                <Drawer.Screen name="TabView" children={props => <TabView navigation={props.navigation} />} />
             </Drawer.Navigator>
         </SafeAreaView>
     )
