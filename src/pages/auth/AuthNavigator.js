@@ -21,7 +21,7 @@ import JoinStep2 from 'pages/auth/JoinStep2'
 import JoinStep3 from 'pages/auth/JoinStep3'
 import GlobalStyle from 'styles/GlobalStyle'
 
-import Drawer from 'pages/main/Drawer'
+import Drawer from '../main/DrawerView'
 
 enableScreens()
 const Stack = createNativeStackNavigator()

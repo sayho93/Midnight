@@ -4,7 +4,7 @@ import TabNavigator from './TabNavigator'
 import GlobalStyle from 'styles/GlobalStyle'
 import ValueConst from 'constants/ValueConst'
 
-const Detail = props => {
+const TabView = props => {
     return (
         <View style={GlobalStyle.background}>
             <View style={styles.headerBar}>
@@ -24,4 +24,4 @@ const styles = StyleSheet.create({
     },
 })
 
-export default Detail
+export default TabView
