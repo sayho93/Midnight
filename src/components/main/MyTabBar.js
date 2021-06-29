@@ -65,13 +65,9 @@ function MyTabBar({state, descriptors, navigation, position}) {
                         testID={options.tabBarTestID}
                         onPress={onPress}
                         onLongPress={onLongPress}
-                        style={[styles.area, {backgroundColor: isFocused ? ValueConst.colors.colorPrimaryDark : ValueConst.colors.themeColor}]}
+                        style={[styles.area, {backgroundColor: isFocused ? ValueConst.colors.colorPrimary : ValueConst.colors.themeColor}]}
                         key={route.key}>
-                        <Image
-                            source={tempIcon}
-                            style={[styles.ImageIconStyle]}
-                            accessibilityLabel={label}
-                        />
+                        <Image source={tempIcon} style={[styles.ImageIconStyle]} accessibilityLabel={label} />
                     </TouchableOpacity>
                 )
             })}
