@@ -1,5 +1,5 @@
 import React from 'react'
-import {Image, StyleSheet, View} from 'react-native'
+import {Image, StyleSheet, TouchableOpacity, TouchableHighlight, View} from 'react-native'
 import TabNavigator from './TabNavigator'
 import GlobalStyle from 'styles/GlobalStyle'
 import ValueConst from 'constants/ValueConst'
@@ -13,17 +13,21 @@ const TabView = props => {
     return (
         <SafeAreaView style={GlobalStyle.background}>
             <View style={styles.headerBar}>
-                <Icon
-                    name="bars"
-                    size={20}
-                    color={ValueConst.colors.white}
-                    style={styles.leftIcon}
-                    onPress={() => {
-                        props.navigation.toggleDrawer()
-                    }}
-                />
+                <TouchableHighlight style={styles.leftIconContainer}>
+                    <Icon
+                        name="bars"
+                        size={20}
+                        color={ValueConst.colors.white}
+                        style={styles.leftIcon}
+                        onPress={() => {
+                            props.navigation.toggleDrawer()
+                        }}
+                    />
+                </TouchableHighlight>
                 <Image source={Logo} style={styles.logo} />
-                <Image source={Alert} style={styles.rightIcon} />
+                <TouchableOpacity style={styles.rightIcon}>
+                    <Image source={Alert} style={styles.rightIcon} />
+                </TouchableOpacity>
             </View>
             <TabNavigator />
         </SafeAreaView>
@@ -37,9 +41,11 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         backgroundColor: ValueConst.colors.themeColor,
     },
-    leftIcon: {
+    leftIconContainer: {
         paddingHorizontal: 5,
         flex: 1,
+    },
+    leftIcon: {
         textAlign: 'center',
     },
     logo: {

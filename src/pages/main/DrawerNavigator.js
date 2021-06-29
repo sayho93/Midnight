@@ -17,7 +17,7 @@ const DrawerNavigator = ({navigation}) => {
         navigation.addListener('beforeRemove', event => {
             console.log(';;;;;')
             event.preventDefault()
-            if (Platform.OS === 'ios') navigation.openDrawer()
+            navigation.navigate('Main')
         })
     }, [navigation])
 

@@ -52,7 +52,7 @@ const AuthNavigator = () => {
                 options={{headerShown: false}}
                 // initialParams={{itemId: 42}}
             />
-            <Stack.Screen name="Main" component={DrawerNavigator} options={{headerShown: false}} />
+            <Stack.Screen name="Main" component={DrawerNavigator} options={{headerShown: false, gestureEnabled: false}} />
             <Stack.Screen name="JoinStep1" component={JoinStep1} options={{title: '회원가입'}} />
             <Stack.Screen name="JoinStep2" component={JoinStep2} options={{title: '세부 정보'}} />
             <Stack.Screen name="JoinStep3" component={JoinStep3} options={{title: '관심사 선택'}} />
