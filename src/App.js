@@ -21,16 +21,14 @@ const App = () => {
     return (
         <AnimatedAppLoader image={splashImg}>
             <Provider store={Store}>
-                <SafeAreaView style={GlobalStyle.background} forceInset={{bottom: 'never'}}>
-                    <StatusBar
-                        backgroundColor={ValueConst.colors.themeColor}
-                        // barStyle={isDarkMode ? 'light-content' : 'dark-content'}
-                        barStyle={'light-content'}
-                    />
-                    <NavigationContainer>
-                        <AuthNavigator />
-                    </NavigationContainer>
-                </SafeAreaView>
+                <StatusBar
+                    backgroundColor={ValueConst.colors.themeColor}
+                    // barStyle={isDarkMode ? 'light-content' : 'dark-content'}
+                    barStyle={'light-content'}
+                />
+                <NavigationContainer>
+                    <AuthNavigator />
+                </NavigationContainer>
             </Provider>
         </AnimatedAppLoader>
     )

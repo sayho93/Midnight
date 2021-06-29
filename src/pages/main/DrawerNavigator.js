@@ -22,7 +22,7 @@ const DrawerNavigator = props => {
             drawerType={dimensions.width >= 768 ? 'permanent' : 'slide'}
             initialRouteName="Home"
             backBehavior="none"
-            edgeWidth={40}
+            edgeWidth={50}
             drawerStyle={styles.drawerStyle}>
             <Drawer.Screen name="Home" component={TabView} />
         </Drawer.Navigator>
