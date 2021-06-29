@@ -23,6 +23,7 @@ const App = () => {
             <AnimatedAppLoader image={splashImg}>
                 <Provider store={Store}>
                     <StatusBar
+                        transluent
                         backgroundColor={ValueConst.colors.themeColor}
                         // barStyle={isDarkMode ? 'light-content' : 'dark-content'}
                         barStyle={'light-content'}
