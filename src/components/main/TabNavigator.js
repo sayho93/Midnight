@@ -12,7 +12,12 @@ const Tab = createMaterialTopTabNavigator()
 
 const TabNavigator = () => {
     return (
-        <Tab.Navigator initialRouteName="Feed" tabBarPosition="bottom" style={GlobalStyle.background} tabBar={props => <MyTabBar {...props} />}>
+        <Tab.Navigator
+            initialRouteName="Feed"
+            tabBarPosition="bottom"
+            backBehavior="none"
+            style={GlobalStyle.background}
+            tabBar={props => <MyTabBar {...props} />}>
             <Tab.Screen name="Feed" component={Feed} key="0" options={{tabBarLabel: 'Feed'}} />
             <Tab.Screen name="Place" component={Place} key="1" options={{tabBarLabel: 'Place'}} />
             <Tab.Screen name="Recc" component={Recc} key="2" options={{tabBarLabel: 'Recc'}} />

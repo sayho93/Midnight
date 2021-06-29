@@ -6,7 +6,7 @@ import Store from 'store/Store'
 import * as SplashScreen from 'expo-splash-screen'
 
 import AppLoading from 'expo-app-loading'
-import {Platform, Animated, View, StyleSheet, Image, SafeAreaView, StatusBar, useColorScheme} from 'react-native'
+import {Platform, Animated, View, StyleSheet, Image, StatusBar, SafeAreaView, useColorScheme} from 'react-native'
 import Constants from 'expo-constants'
 import splashImg from 'img/title_logo_small.png'
 import GlobalStyle from './styles/GlobalStyle'
@@ -21,7 +21,7 @@ const App = () => {
     return (
         <AnimatedAppLoader image={splashImg}>
             <Provider store={Store}>
-                <SafeAreaView style={GlobalStyle.background}>
+                <SafeAreaView style={GlobalStyle.background} forceInset={{bottom: 'never'}}>
                     <StatusBar
                         backgroundColor={ValueConst.colors.themeColor}
                         // barStyle={isDarkMode ? 'light-content' : 'dark-content'}
