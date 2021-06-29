@@ -23,8 +23,8 @@ const App = () => {
             <AnimatedAppLoader image={splashImg}>
                 <Provider store={Store}>
                     <StatusBar
-                        transluent
-                        backgroundColor={ValueConst.colors.themeColor}
+                        // translucent={true}
+                        backgroundColor="transparent"
                         // barStyle={isDarkMode ? 'light-content' : 'dark-content'}
                         barStyle={'light-content'}
                     />
@@ -73,7 +73,7 @@ function AnimatedSplashScreen({children, image}) {
     React.useEffect(() => {
         if (isAppReady) {
             console.log('App Ready')
-            const time = Platform.OS === 'android' ? 2000 : 2000
+            const time = Platform.OS === 'android' ? 1000 : 1000
             setTimeout(() => {
                 Animated.timing(animation, {
                     toValue: 0,
@@ -128,21 +128,6 @@ function AnimatedSplashScreen({children, image}) {
                         onLoadEnd={onImageLoaded}
                         fadeDuration={3}
                     />
-                    {/*<Animated.Image*/}
-                    {/*    style={{*/}
-                    {/*        width: '100%',*/}
-                    {/*        height: '100%',*/}
-                    {/*        // resizeMode: Constants.manifest.splash.resizeMode || 'contain',*/}
-                    {/*        // transform: [*/}
-                    {/*        //     {*/}
-                    {/*        //         scale: animation,*/}
-                    {/*        //     },*/}
-                    {/*        // ],*/}
-                    {/*    }}*/}
-                    {/*    source={image}*/}
-                    {/*    onLoadEnd={onImageLoaded}*/}
-                    {/*    fadeDuration={3}*/}
-                    {/*/>*/}
                 </Animated.View>
             )}
         </View>

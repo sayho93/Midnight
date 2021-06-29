@@ -22,23 +22,24 @@ const DrawerNavigator = ({navigation}) => {
     }, [navigation])
 
     return (
-        <SafeAreaView style={GlobalStyle.background} edges={['top']}>
-            <Drawer.Navigator
-                drawerType={dimensions.width >= 768 ? 'permanent' : 'slide'}
-                initialRouteName="TabView"
-                backBehavior="none"
-                edgeWidth={Platform.OS === 'android' ? 50 : 100}
-                drawerStyle={styles.drawerStyle}
-                overlayColor="transparent">
-                <Drawer.Screen name="TabView" children={props => <TabView navigation={props.navigation} />} />
-            </Drawer.Navigator>
-        </SafeAreaView>
+        <Drawer.Navigator
+            drawerType={dimensions.width >= 768 ? 'permanent' : 'slide'}
+            initialRouteName="TabView"
+            backBehavior="none"
+            edgeWidth={Platform.OS === 'android' ? 50 : 100}
+            drawerStyle={styles.drawerStyle}
+            overlayColor="transparent">
+            <Drawer.Screen name="TabView" children={props => <TabView navigation={props.navigation} />} />
+        </Drawer.Navigator>
+        // <SafeAreaView style={GlobalStyle.background} edges={['top']}>
+        //
+        // </SafeAreaView>
     )
 }
 
 const styles = StyleSheet.create({
     drawerStyle: {
-        backgroundColor: ValueConst.colors.colorPrimary,
+        backgroundColor: ValueConst.colors.white,
         // backgroundColor: 'transparent',
         // borderRight: 1,
         borderColor: ValueConst.colors.colorPrimary,
