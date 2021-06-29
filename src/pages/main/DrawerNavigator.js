@@ -41,8 +41,6 @@ const styles = StyleSheet.create({
     drawerStyle: {
         backgroundColor: ValueConst.colors.white,
         // backgroundColor: 'transparent',
-        // borderRight: 1,
-        borderColor: ValueConst.colors.colorPrimary,
     },
 })
 
