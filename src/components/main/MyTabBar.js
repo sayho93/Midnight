@@ -6,12 +6,14 @@ import menuMarket from 'img/menu_market.png'
 import menuRecc from 'img/menu_chat_s.png'
 import menuChat from 'img/menu_log_s.png'
 import menuMap from 'img/menu_map.png'
+import ValueConst from 'constants/ValueConst'
 
 function MyTabBar({state, descriptors, navigation, position}) {
     return (
         <View style={{flexDirection: 'row'}}>
             {state.routes.map((route, index) => {
                 const {options} = descriptors[route.key]
+                console.log(options)
                 const label = options.tabBarLabel !== undefined ? options.tabBarLabel : options.title !== undefined ? options.title : route.name
 
                 const isFocused = state.index === index
@@ -68,7 +70,10 @@ function MyTabBar({state, descriptors, navigation, position}) {
                         onLongPress={onLongPress}
                         style={styles.area}
                         key={route.key}>
-                        <Image source={tempIcon} style={styles.ImageIconStyle} />
+                        <Image
+                            source={tempIcon}
+                            style={[styles.ImageIconStyle, {tintColor: isFocused ? ValueConst.colors.highlight : ValueConst.colors.white}]}
+                        />
                     </TouchableOpacity>
                 )
             })}
