@@ -18,7 +18,6 @@ const JoinStep3Component = props => {
 
     const onBtnToggle = value => {
         const flag = status[value] === 'checked' ? 'unchecked' : 'checked'
-        console.log(value)
         setStatus({
             ...status,
             [value]: flag,
@@ -36,10 +35,9 @@ const JoinStep3Component = props => {
             return [
                 props.characters.info.data.map(category => {
                     let row = id++
-                    console.log(id + '::::' + row)
                     return (
                         <View style={{backgroundColor: row % 2 === 1 ? ValueConst.colors.themeColor : ValueConst.colors.colorPrimary}}>
-                            <Text key={category.id} style={[GlobalStyle.textStyle, styles.innerLayout]}>
+                            <Text key={category.id} style={[GlobalStyle.textStyle, styles.innerLayout, {marginTop: 10}]}>
                                 {category.desc}
                             </Text>
                             <View style={[styles.innerLayout, styles.hashtagLayout]} key={category.desc}>
@@ -67,7 +65,7 @@ const JoinStep3Component = props => {
                         </View>
                     )
                 }),
-                <View style={styles.buttonWrapper}>
+                <View style={styles.buttonWrapper} key="confirmBtn">
                     <CustomButton title="완료" onPress={onNextPress} color={ValueConst.colors.highlight} textColor={ValueConst.colors.white} />
                 </View>,
             ]
