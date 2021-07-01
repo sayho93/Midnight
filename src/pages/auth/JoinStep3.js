@@ -37,7 +37,7 @@ const JoinStep3Component = props => {
                     let row = id++
                     return (
                         <View style={{backgroundColor: row % 2 === 1 ? ValueConst.colors.themeColor : ValueConst.colors.colorPrimary}}>
-                            <Text key={category.id} style={[GlobalStyle.textStyle, styles.innerLayout, {marginTop: 10}]}>
+                            <Text key={category.id} style={[styles.btnText, styles.innerLayout, {textAlign: 'left', marginTop: 10}]}>
                                 {category.desc}
                             </Text>
                             <View style={[styles.innerLayout, styles.hashtagLayout]} key={category.desc}>
@@ -57,7 +57,7 @@ const JoinStep3Component = props => {
                                                 },
                                             ]}
                                             onPress={() => onBtnToggle(key)}>
-                                            <Text style={[styles.btnText, {color: ValueConst.colors.white}]}>{item.description}</Text>
+                                            <Text style={[styles.btnText]}>{item.description}</Text>
                                         </TouchableOpacity>
                                     )
                                 })}
@@ -114,6 +114,7 @@ const styles = StyleSheet.create({
         textAlign: 'center',
         fontFamily: ValueConst.font.jalnan,
         fontSize: ValueConst.dimensions.font_size_default,
+        color: ValueConst.colors.white,
     },
     buttonWrapper: {
         marginHorizontal: ValueConst.dimensions.list_margin,
