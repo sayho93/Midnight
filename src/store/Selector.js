@@ -5,6 +5,9 @@ const user = state => {
     console.log(state)
     return state.user.info
 }
-const characters = state => state.user.characters
+const userCharacters = state => state.user.characters
 
-export const getUser = createSelector([user, characters], info => info)
+const characters = state => state.characters
+
+export const getUser = createSelector([user, userCharacters], info => info)
+export const getCharacters = createSelector([characters], info => info)

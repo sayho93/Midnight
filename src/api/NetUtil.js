@@ -31,6 +31,19 @@ const NetUtil = {
                 })
         })
     },
+    getCharacters: () => {
+        return new Promise(async (resolve, reject) => {
+            console.log(`${Configs.API_GET_CHARLIST}`)
+            axios
+                .get(`${Configs.API_GET_CHARLIST}`)
+                .then(res => {
+                    resolve(res.data)
+                })
+                .catch(err => {
+                    reject(new Error(err))
+                })
+        })
+    },
 }
 
 export default NetUtil

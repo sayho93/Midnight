@@ -29,7 +29,8 @@ class Configs {
 
     API_POST_FILE = this.BASE_URL + 'route.php?F=BoardRoute.uploadFile.raw'
 
-    API_GET_CHARLIST = this.BASE_URL + 'route.php?F=WebRoute.getCharacterList.raw'
+    // API_GET_CHARLIST = this.BASE_URL + 'route.php?F=WebRoute.getCharacterList.raw'
+    API_GET_CHARLIST = this.BASE_URL + 'route.php?F=WebRoute.getCharacters.raw'
     API_GET_JOIN1 = this.BASE_URL + 'route.php?F=UserAuthRoute.joinUser.raw'
     API_GET_JOIN2 = this.BASE_URL + 'route.php?F=UserAuthRoute.setUserDetails.raw'
     API_GET_JOIN3 = this.BASE_URL + 'route.php?F=UserAuthRoute.setUserCharacter.raw'
