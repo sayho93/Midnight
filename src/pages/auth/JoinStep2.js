@@ -15,7 +15,7 @@ const JoinStep2 = ({route, navigation}) => {
     }
 
     const onNextPress = () => {
-        navigation.push('JoinStep3')
+        navigation.navigate('JoinStep3')
     }
 
     return (
