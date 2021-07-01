@@ -91,14 +91,10 @@ const JoinStep3 = connect(mapStateToProps, mapDispatchToProps)(JoinStep3Componen
 const styles = StyleSheet.create({
     layout: {
         margin: ValueConst.dimensions.list_margin,
-        // justifyContent: 'center',
-        // alignItems: 'center',
     },
     hashtagLayout: {
-        padding: 20,
-        // alignItems: 'center',
-        alignItems: 'baseline',
-        // justifyContent: 'flex-start',
+        paddingVertical: 20,
+        flexWrap: 'wrap',
         flexDirection: 'row',
     },
     btn: {
