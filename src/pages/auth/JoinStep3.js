@@ -39,7 +39,13 @@ const JoinStep3Component = props => {
                         <View
                             style={{backgroundColor: row % 2 === 1 ? ValueConst.colors.themeColor : ValueConst.colors.colorPrimary}}
                             key={`area${id}`}>
-                            <Text key={category.id} style={[styles.btnText, styles.innerLayout, {textAlign: 'left', marginTop: 10}]}>
+                            <Text
+                                key={category.id}
+                                style={[
+                                    styles.btnText,
+                                    styles.innerLayout,
+                                    {fontSize: ValueConst.dimensions.font_size_strong, textAlign: 'left', marginTop: 10},
+                                ]}>
                                 {category.desc}
                             </Text>
                             <View style={[styles.innerLayout, styles.hashtagLayout]} key={category.desc}>
