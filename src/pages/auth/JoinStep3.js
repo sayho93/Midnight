@@ -36,7 +36,9 @@ const JoinStep3Component = props => {
                 props.characters.info.data.map(category => {
                     let row = id++
                     return (
-                        <View style={{backgroundColor: row % 2 === 1 ? ValueConst.colors.themeColor : ValueConst.colors.colorPrimary}}>
+                        <View
+                            style={{backgroundColor: row % 2 === 1 ? ValueConst.colors.themeColor : ValueConst.colors.colorPrimary}}
+                            key={`area${id}`}>
                             <Text key={category.id} style={[styles.btnText, styles.innerLayout, {textAlign: 'left', marginTop: 10}]}>
                                 {category.desc}
                             </Text>
