@@ -113,7 +113,7 @@ const styles = StyleSheet.create({
     btnText: {
         textAlign: 'center',
         fontFamily: ValueConst.font.jalnan,
-        fontSize: ValueConst.dimensions.font_size_default,
+        fontSize: ValueConst.dimensions.font_size_mid,
         color: ValueConst.colors.white,
     },
     buttonWrapper: {

@@ -8,6 +8,7 @@ const ValueConst = {
         top_title_size: 32,
         list_margin: 15,
         font_size_strong: 15,
+        font_size_mid: 14,
         font_size_default: 12,
         font_size_small: 10,
         right_side_btn_pad: 40,
